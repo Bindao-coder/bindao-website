@@ -1,0 +1,1556 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0B0B09">
+<meta name="color-scheme" content="dark">
+<script>document.documentElement.classList.add('js')</script>
+<title>БИНДАО — клуб чайных авантюристов | Элитный китайский чай и нефрит</title>
+<meta name="description" content="БИНДАО — элитный натуральный китайский чай напрямую от фермеров Юннани и изделия из нефрита. Клуб чайных авантюристов.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;700;800&family=Manrope:wght@400;500;600;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  color-scheme:dark;
+  --ink:#0B0B09;
+  --ink2:#121210;
+  --card:#161613;
+  --lime:#C9F229;
+  --lime-dim:#a8cc1d;
+  --cream:#F2EFE4;
+  --mut:#98968a;
+  --line:rgba(242,239,228,.12);
+  --line-lime:rgba(201,242,41,.35);
+  --disp:'Unbounded',sans-serif;
+  --body:'Manrope',sans-serif;
+  --script:'Caveat',cursive;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;background:#0B0B09;overflow-x:hidden;overflow-x:clip}
+body{background:#0B0B09;background:var(--ink);color:var(--cream);font-family:var(--body);font-size:17px;line-height:1.65;overflow-x:hidden;overflow-x:clip;max-width:100vw}
+::selection{background:var(--lime);color:var(--ink)}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+a,button,label{touch-action:manipulation;-webkit-tap-highlight-color:rgba(201,242,41,.25)}
+h1,h2,h3{font-family:var(--disp);font-weight:700;line-height:1.12;letter-spacing:.02em;text-transform:uppercase}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+.eyebrow{font-family:var(--disp);font-size:.7rem;font-weight:600;letter-spacing:.35em;text-transform:uppercase;color:var(--lime);display:flex;align-items:center;gap:14px}
+.eyebrow::before{content:"";width:34px;height:2px;background:var(--lime)}
+.script{font-family:var(--script);color:var(--lime);font-size:1.9rem;line-height:1.15;font-weight:600;transform:rotate(-1.5deg);display:inline-block}
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--disp);font-size:.78rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:17px 30px;border:1px solid var(--lime);cursor:pointer;transition:.25s;background:transparent;color:var(--lime)}
+.btn:hover{background:var(--lime);color:var(--ink)}
+.btn.solid{background:var(--lime);color:var(--ink)}
+.btn.solid:hover{background:var(--cream);border-color:var(--cream)}
+
+/* ---------- NAV ---------- */
+nav{position:fixed;inset:0 0 auto 0;z-index:100;backdrop-filter:blur(14px);background:rgba(11,11,9,.78);border-bottom:1px solid var(--line)}
+.nav-in{max-width:1200px;margin:0 auto;padding:0 24px;height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:12px}
+.brand svg{width:38px;height:38px}
+.brand b{font-family:var(--disp);font-weight:800;font-size:1.05rem;letter-spacing:.14em}
+.nav-links{display:flex;gap:34px}
+.nav-links a{font-size:.82rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--mut);transition:.2s}
+.nav-links a:hover{color:var(--lime)}
+.nav-cta{font-family:var(--disp);font-size:.68rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);background:var(--lime);padding:11px 20px;transition:.2s}
+.nav-cta:hover{background:var(--cream)}
+.burger{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:5px;padding:6px}
+.burger span{width:24px;height:2px;background:var(--cream);transition:.25s}
+.mobile-menu{display:none;position:fixed;top:72px;left:0;right:0;background:var(--ink);border-bottom:1px solid var(--line);z-index:99;padding:18px 24px 26px;flex-direction:column;gap:4px}
+.mobile-menu a.menu-close{color:var(--lime);border-bottom-color:var(--line-lime)}
+.mobile-menu a{padding:14px 0;font-family:var(--disp);font-size:.85rem;letter-spacing:.14em;text-transform:uppercase;border-bottom:1px solid var(--line)}
+.mobile-menu.open{display:flex}
+.mobile-menu:target{display:flex}
+
+/* ---------- HERO ---------- */
+header{background:#0B0B09;min-height:100vh;min-height:100svh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;position:relative;padding:120px 24px 90px;overflow:hidden}
+
+/* --- animated Yunnan scene --- */
+.scene{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.scene-svg{position:absolute;inset:0;width:100%;height:100%;display:block}
+.ridge-far{animation:sway 26s ease-in-out infinite alternate}
+.ridge-mid{animation:sway 20s ease-in-out infinite alternate-reverse}
+@keyframes sway{from{transform:translateX(-14px)}to{transform:translateX(14px)}}
+.clouds-a{animation:cloudDrift 90s linear infinite}
+.clouds-b{animation:cloudDrift 140s linear infinite reverse}
+@keyframes cloudDrift{from{transform:translateX(-8%)}to{transform:translateX(8%)}}
+.river-flow{stroke-dasharray:14 26;animation:flow 5.5s linear infinite}
+@keyframes flow{to{stroke-dashoffset:-200}}
+.fog{position:absolute;width:130vw;height:34vh;border-radius:50%;filter:blur(46px);opacity:.75;will-change:transform}
+.fog-a{left:-30vw;top:42%;background:radial-gradient(ellipse at center,rgba(214,228,206,.13),transparent 62%);animation:fogDrift 46s ease-in-out infinite alternate}
+.fog-b{left:-10vw;top:56%;background:radial-gradient(ellipse at center,rgba(198,214,188,.10),transparent 60%);animation:fogDrift 62s ease-in-out infinite alternate-reverse}
+.fog-c{left:-20vw;top:70%;background:radial-gradient(ellipse at center,rgba(220,232,210,.08),transparent 58%);animation:fogDrift 78s ease-in-out infinite alternate}
+@keyframes fogDrift{from{transform:translateX(-6vw) translateY(0)}to{transform:translateX(14vw) translateY(-2vh)}}
+.scene-shade{position:absolute;inset:0;background:
+  radial-gradient(ellipse 62% 52% at 50% 44%, rgba(11,11,9,.62) 0%, rgba(11,11,9,.28) 55%, rgba(11,11,9,0) 100%),
+  linear-gradient(to bottom, rgba(11,11,9,.55) 0%, rgba(11,11,9,0) 26%, rgba(11,11,9,0) 62%, rgba(11,11,9,.82) 100%)}
+header .wrap-hero{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center}
+.hero-mark{width:min(190px,34vw);height:auto;margin-bottom:34px}
+.hero-mark .draw{stroke-dasharray:900;stroke-dashoffset:900;animation:draw 1.6s .2s cubic-bezier(.6,0,.3,1) forwards}
+.hero-mark .sun{opacity:0;animation:pop .5s 1.5s forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes pop{to{opacity:1}}
+h1{font-size:clamp(3rem,10vw,7.4rem);font-weight:800;letter-spacing:.04em;color:var(--cream)}
+.hero-sub{margin-top:18px;font-family:var(--disp);font-size:clamp(.72rem,2vw,1.02rem);font-weight:600;letter-spacing:.42em;text-transform:uppercase;color:var(--lime)}
+.hero-badge{margin-top:34px;display:flex;align-items:center;gap:22px;font-family:var(--disp);font-size:.68rem;letter-spacing:.3em;text-transform:uppercase;color:var(--mut)}
+.hz-box{border:1.5px solid var(--lime);color:var(--lime);font-family:var(--body);font-weight:700;font-size:1.1rem;letter-spacing:.05em;padding:7px 10px;line-height:1.15;writing-mode:vertical-rl;text-orientation:upright}
+.hero-script{margin-top:36px}
+.hero-actions{margin-top:44px;display:flex;gap:16px;flex-wrap:wrap;justify-content:center}
+.scroll-hint{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);color:var(--cream);opacity:.55;font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;animation:bob 2.4s infinite ease-in-out;z-index:2}
+@keyframes bob{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,8px)}}
+
+/* ---------- MARQUEE ---------- */
+.marquee{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;padding:16px 0;background:var(--ink2)}
+.marquee-track{display:flex;gap:0;width:max-content;animation:mq 28s linear infinite}
+.marquee span{font-family:var(--disp);font-size:.78rem;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--mut);white-space:nowrap;padding:0 26px;display:flex;align-items:center;gap:26px}
+.marquee span i{font-style:normal;color:var(--lime)}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* ---------- SECTIONS ---------- */
+section{padding:110px 0;background:var(--ink)}
+.sec-head{display:flex;flex-direction:column;gap:18px;margin-bottom:56px}
+.sec-head h2{font-size:clamp(1.7rem,4.4vw,3rem)}
+.sec-head p{max-width:620px;color:var(--mut)}
+
+/* manifesto */
+.mani{display:grid;grid-template-columns:1.1fr .9fr;gap:70px;align-items:center}
+.mani-txt p{color:var(--mut);margin-bottom:18px}
+.mani-txt strong{color:var(--cream)}
+.mani-visual{position:relative;background:var(--card);border:1px solid var(--line);overflow:hidden;display:flex;flex-direction:column;justify-content:center;padding:56px 26px 24px}
+.mani-visual .tag{position:absolute;top:0;left:50%;transform:translateX(-50%);background:var(--lime);color:var(--ink);writing-mode:vertical-rl;text-orientation:upright;font-weight:700;font-size:1rem;padding:14px 8px;letter-spacing:.1em;z-index:2}
+.map-title{font-family:var(--disp);font-size:.66rem;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:var(--mut);text-align:center;margin-bottom:10px}
+.china-map{width:100%;height:auto;display:block}
+.china-map .land{fill:rgba(242,239,228,.03);stroke:rgba(242,239,228,.35);stroke-width:2;stroke-linejoin:round}
+.china-map .land-dots{fill:url(#dotgrid)}
+.china-map text{font-family:var(--body);font-weight:600;fill:var(--cream);font-size:21px;letter-spacing:.08em}
+.china-map text.t-sub{fill:var(--mut);font-size:17px;font-weight:500}
+.china-map .lbl-tea{fill:var(--lime)}
+.china-map .lbl-jade{fill:#8FD6B4}
+.p-tea{fill:var(--lime)}
+.pulse{fill:none;stroke:var(--lime);stroke-width:2;opacity:0;transform-origin:center;animation:pulse 2.6s ease-out infinite}
+@keyframes pulse{0%{opacity:.8;r:8}100%{opacity:0;r:26}}
+.p-jade{fill:none;stroke:#8FD6B4;stroke-width:3}
+.map-legend{display:flex;gap:26px;justify-content:center;margin-top:16px;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--mut)}
+.map-legend span{display:flex;align-items:center;gap:9px}
+.lg-dot{width:9px;height:9px;border-radius:50%;background:var(--lime)}
+.lg-diamond{width:9px;height:9px;border:2px solid #8FD6B4;transform:rotate(45deg)}
+.lg-star{color:var(--lime);font-size:1rem;line-height:0}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:46px}
+.stat{background:var(--ink);padding:28px 22px}
+.stat b{font-family:var(--disp);font-size:clamp(1.5rem,3.4vw,2.3rem);font-weight:800;color:var(--lime);display:block;line-height:1}
+.stat span{display:block;margin-top:10px;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;color:var(--mut)}
+
+/* catalog */
+#catalog{background:var(--ink2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.tabs{display:flex;gap:0;border:1px solid var(--line);width:max-content;margin-bottom:50px}
+.tab{font-family:var(--disp);font-size:.78rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;padding:15px 34px;cursor:pointer;background:transparent;border:none;color:var(--mut);transition:.2s;display:inline-flex;align-items:center;justify-content:center;user-select:none}
+.tab-radio{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0;opacity:0;pointer-events:none}
+#tab-tea:checked ~ .tabs label[for="tab-tea"],
+#tab-jade:checked ~ .tabs label[for="tab-jade"]{background:var(--lime);color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.card{background:var(--ink);border:1px solid var(--line);position:relative;padding:0 26px 26px;display:flex;flex-direction:column;transition:.3s;overflow:hidden}
+.card:hover{border-color:var(--line-lime);transform:translateY(-5px)}
+.card .strip{width:44px;background:var(--lime);color:var(--ink);text-align:center;font-weight:700;font-size:.95rem;line-height:1.2;padding:12px 0 10px;margin:0 auto 26px;writing-mode:vertical-rl;text-orientation:upright;letter-spacing:.08em}
+.card .mark{width:52px;margin:0 auto 20px;opacity:.95}
+.card h3{font-size:1.02rem;text-align:center;letter-spacing:.06em}
+.card .origin{text-align:center;color:var(--mut);font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;margin-top:8px}
+.card .desc{color:var(--mut);font-size:.92rem;text-align:center;margin-top:14px;flex:1}
+.spec{border:1px solid var(--line-lime);margin-top:22px;font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--lime)}
+.spec div{display:flex;justify-content:space-between;padding:10px 14px}
+.spec div + div{border-top:1px solid var(--line-lime)}
+.card-foot{display:flex;justify-content:space-between;align-items:center;margin-top:22px;gap:12px}
+.price{font-family:var(--disp);font-weight:700;font-size:1.15rem;color:var(--cream)}
+.price small{display:block;font-family:var(--body);font-weight:500;font-size:.72rem;color:var(--mut);letter-spacing:.06em;text-transform:uppercase;margin-top:2px}
+.add{display:inline-flex;align-items:center;justify-content:center;text-align:center;font-family:var(--disp);font-size:.62rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:12px 16px;background:transparent;border:1px solid var(--lime);color:var(--lime);cursor:pointer;transition:.2s;white-space:nowrap}
+.add:hover{background:var(--lime);color:var(--ink)}
+.panel{display:none}
+#tab-tea:checked ~ #panel-tea,
+#tab-jade:checked ~ #panel-jade{display:block;animation:fade .4s}
+@keyframes fade{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.jade-note{margin-top:34px;display:flex;gap:14px;align-items:flex-start;color:var(--mut);font-size:.92rem;max-width:640px}
+.jade-note::before{content:"冰";color:var(--lime);font-weight:700;font-size:1.3rem;line-height:1.2}
+
+/* path */
+.path{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.step{background:var(--ink);padding:36px 28px;position:relative}
+.step em{font-family:var(--disp);font-style:normal;font-weight:800;font-size:.72rem;letter-spacing:.2em;color:var(--lime)}
+.step h3{font-size:1rem;margin-top:16px;letter-spacing:.06em}
+.step p{color:var(--mut);font-size:.9rem;margin-top:12px}
+.step::after{content:"→";position:absolute;top:36px;right:20px;color:var(--line-lime);font-size:1.1rem}
+.step:last-child::after{content:""}
+
+/* club */
+#club{background:var(--ink2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.club{display:grid;grid-template-columns:.9fr 1.1fr;gap:70px;align-items:center}
+.welcome-card{background:var(--lime);color:var(--ink);aspect-ratio:5/3.4;padding:34px;display:flex;flex-direction:column;justify-content:space-between;transform:rotate(-2deg);box-shadow:0 30px 60px rgba(0,0,0,.45);position:relative}
+.welcome-card h3{font-size:clamp(1.1rem,2.6vw,1.6rem);color:var(--ink);max-width:9em}
+.welcome-card .smile{font-family:var(--disp);font-weight:800;font-size:1.4rem}
+.welcome-card .wc-brand{display:flex;align-items:center;gap:10px;font-family:var(--disp);font-weight:800;letter-spacing:.12em;font-size:.95rem}
+.welcome-card .wc-brand svg{width:30px;height:30px}
+.perks{display:flex;flex-direction:column;gap:0;border-top:1px solid var(--line)}
+.perk{display:flex;gap:22px;padding:24px 0;border-bottom:1px solid var(--line);align-items:baseline}
+.perk b{font-family:var(--disp);color:var(--lime);font-size:.75rem;letter-spacing:.14em;min-width:96px;text-transform:uppercase}
+.perk div h3{font-size:.95rem;letter-spacing:.05em}
+.perk div p{color:var(--mut);font-size:.9rem;margin-top:6px}
+
+/* order */
+.order{display:grid;grid-template-columns:1fr 1fr;gap:70px}
+.order-info p{color:var(--mut);margin-bottom:22px}
+.contact-line{display:flex;gap:14px;align-items:center;padding:16px 0;border-bottom:1px solid var(--line);font-size:.95rem}
+.contact-line b{font-family:var(--disp);font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--lime);min-width:96px}
+form{display:flex;flex-direction:column;gap:16px}
+label{font-family:var(--disp);font-size:.66rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--mut)}
+input,textarea,select{background:var(--card);border:1px solid var(--line);color:var(--cream);padding:15px 16px;font-family:var(--body);font-size:.95rem;transition:.2s;width:100%}
+input:focus,textarea:focus,select:focus{outline:none;border-color:var(--lime)}
+input:-webkit-autofill,input:-webkit-autofill:hover,input:-webkit-autofill:focus{-webkit-box-shadow:0 0 0 60px var(--card) inset;-webkit-text-fill-color:var(--cream);caret-color:var(--cream)}
+textarea{resize:vertical;min-height:110px}
+.form-ok{display:none;border:1px solid var(--lime);color:var(--lime);padding:18px;font-size:.92rem;text-align:center}
+
+/* footer */
+footer{border-top:1px solid var(--line);padding:56px 0 40px;background:var(--ink)}
+.foot{display:flex;justify-content:space-between;align-items:center;gap:26px;flex-wrap:wrap}
+.foot small{color:var(--mut);font-size:.8rem;letter-spacing:.08em}
+.foot .hz-mini{color:var(--lime);border:1px solid var(--line-lime);padding:4px 8px;font-weight:700}
+.foot-legal{max-width:1200px;margin:28px auto 0;padding:24px 24px 0;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap}
+.foot-docs{display:flex;gap:24px;flex-wrap:wrap}
+.foot-docs a{font-size:.78rem;font-weight:600;letter-spacing:.06em;color:var(--mut);transition:.2s;border-bottom:1px solid transparent}
+.foot-docs a:hover{color:var(--lime);border-bottom-color:var(--line-lime)}
+.foot-req{color:var(--mut);font-size:.74rem;letter-spacing:.05em;line-height:1.7;text-align:right}
+
+/* consent checkbox */
+.consent{display:flex;gap:12px;align-items:flex-start;cursor:pointer}
+.consent input{width:auto;flex:0 0 auto;appearance:none;-webkit-appearance:none;width:20px;height:20px;min-width:20px;border:1px solid var(--line-lime);background:var(--card);cursor:pointer;position:relative;margin-top:2px;transition:.2s;padding:0}
+.consent input:checked{background:var(--lime);border-color:var(--lime)}
+.consent input:checked::after{content:"";position:absolute;left:6px;top:2px;width:5px;height:10px;border:solid var(--ink);border-width:0 2px 2px 0;transform:rotate(45deg)}
+.consent input:focus-visible{outline:2px solid var(--lime);outline-offset:2px}
+.consent span{font-family:var(--body);font-size:.82rem;font-weight:400;letter-spacing:.02em;text-transform:none;color:var(--mut);line-height:1.55}
+.consent a{color:var(--lime);border-bottom:1px solid var(--line-lime)}
+.consent a:hover{border-bottom-color:var(--lime)}
+
+/* cookie notice */
+.cookie-bar{position:fixed;bottom:18px;left:18px;right:18px;max-width:520px;margin:0 auto;z-index:200;background:var(--card);border:1px solid var(--line-lime);padding:20px 22px;font-size:.86rem;line-height:1.55;color:var(--cream);box-shadow:0 14px 44px rgba(0,0,0,.5);display:none;animation:cookieUp .4s ease}
+@keyframes cookieUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.cookie-bar.show{display:block}
+.cookie-bar a{color:var(--lime);border-bottom:1px solid var(--line-lime)}
+.cookie-bar .btn{margin-top:14px;padding:12px 22px;font-size:.68rem}
+@media (prefers-reduced-motion:reduce){.cookie-bar{animation:none}}
+@media (max-width:640px){.foot-legal{flex-direction:column;align-items:flex-start}.foot-req{text-align:left}}
+
+/* legal modals */
+.legal-overlay{position:fixed;inset:0;z-index:300;background:rgba(11,11,9,.82);backdrop-filter:blur(8px);display:none;overflow-y:auto;padding:24px}
+.legal-overlay.open{display:block}
+body.modal-open{overflow:hidden}
+.legal-modal{background:var(--ink2);border:1px solid var(--line-lime);max-width:820px;margin:40px auto;padding:44px 40px 48px;position:relative;animation:cookieUp .35s ease}
+.legal-close{position:absolute;top:16px;right:16px;background:transparent;border:1px solid var(--line);color:var(--cream);width:42px;height:42px;font-size:1.2rem;line-height:1;cursor:pointer;transition:.2s;font-family:var(--body)}
+.legal-close:hover{background:var(--lime);color:var(--ink);border-color:var(--lime)}
+.legal-modal .eyebrow{margin-bottom:16px}
+.legal-modal h2{font-size:clamp(1.15rem,3vw,1.6rem);margin-bottom:10px;padding-right:44px}
+.lm-meta{color:var(--mut);font-size:.82rem;letter-spacing:.04em;padding-bottom:22px;border-bottom:1px solid var(--line);margin-bottom:28px}
+.legal-modal h3{font-size:.82rem;letter-spacing:.12em;color:var(--lime);margin:30px 0 12px}
+.legal-modal p,.legal-modal li{margin-bottom:9px;font-size:.93rem;line-height:1.7}
+.legal-modal ul{padding-left:22px;margin-bottom:12px}
+.legal-modal a{color:var(--lime);border-bottom:1px solid var(--line-lime)}
+.lm-req{background:var(--card);border:1px solid var(--line-lime);padding:20px 22px;margin:22px 0;font-size:.9rem;line-height:1.7}
+.lm-req b{font-family:var(--disp);font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--lime);display:block;margin-bottom:8px}
+@media (max-width:640px){.legal-modal{padding:32px 20px 36px;margin:16px auto}.legal-overlay{padding:12px}}
+@media (prefers-reduced-motion:reduce){.legal-modal{animation:none}}
+
+
+/* great tea road */
+.route-ghost{fill:none;stroke:rgba(201,242,41,.16);stroke-width:11;stroke-linecap:round}
+.route-line{fill:none;stroke:var(--lime);stroke-width:2.5;stroke-linecap:round;stroke-dasharray:10 14;animation:flow 6s linear infinite}
+.lg-route{width:24px;height:0;border-top:2.5px dashed var(--lime)}
+
+/* jade feature */
+.jade-feature{display:grid;grid-template-columns:.95fr 1.05fr;gap:56px;align-items:start}
+.jade-gallery{display:flex;flex-direction:column;gap:26px;position:sticky;top:96px}
+.jade-photo{position:relative;background:var(--card);border:1px solid var(--line);padding:18px 18px 0;margin:0}
+.jade-photo img{width:100%;height:auto;display:block;border:1px solid var(--line)}
+.jade-photo .tag{position:absolute;top:0;left:36px;background:var(--lime);color:var(--ink);writing-mode:vertical-rl;text-orientation:upright;font-weight:700;font-size:1rem;padding:12px 8px;letter-spacing:.1em;z-index:2}
+.jade-photo figcaption{padding:18px 6px 20px;display:flex;flex-direction:column;gap:4px}
+.jade-photo figcaption b{font-family:var(--disp);font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;color:var(--lime)}
+.jade-photo figcaption span{color:var(--mut);font-size:.86rem;letter-spacing:.03em}
+.jade-txt p{color:var(--mut);margin-bottom:16px;font-size:.97rem}
+.jade-txt strong{color:var(--cream)}
+.jade-lead{font-size:1.05rem!important}
+.jade-h{font-family:var(--disp);font-size:1rem;letter-spacing:.06em;text-transform:uppercase;margin:26px 0 12px;color:var(--cream)}
+.jade-list{list-style:none;margin:0 0 18px;display:flex;flex-direction:column;gap:10px;padding:0}
+.jade-list li{position:relative;padding-left:30px;color:var(--mut);font-size:.95rem}
+.jade-list li::before{content:"\2714";position:absolute;left:0;top:0;color:var(--lime);font-weight:700}
+.jade-list strong{color:var(--cream)}
+
+/* corporate */
+#corp{border-top:1px solid var(--line)}
+.corp-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:stretch}
+.corp-box{background:var(--card);border:1px solid var(--line);padding:38px 34px}
+.corp-box.corp-bonus{border-color:var(--line-lime);background:var(--ink2)}
+.corp-box-title{font-family:var(--disp);font-size:.68rem;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--lime);margin-bottom:16px}
+.corp-sub{color:var(--mut);margin-bottom:18px;font-size:.95rem}
+.corp-note{color:var(--mut);font-size:.95rem;margin-top:6px}
+.corp-note strong,.corp-sub strong{color:var(--cream)}
+.corp-why .step::after{content:""}
+.corp-cta{margin-top:56px;border:1px solid var(--line-lime);padding:34px 32px;display:flex;justify-content:space-between;align-items:center;gap:30px;flex-wrap:wrap;background:var(--ink2)}
+.corp-terms{display:flex;flex-direction:column;gap:10px;color:var(--mut);font-size:.92rem;max-width:640px}
+.corp-terms b{color:var(--lime);font-family:var(--disp)}
+
+/* cart */
+.cart-fab{position:fixed;right:18px;bottom:18px;z-index:120;display:inline-flex;align-items:center;gap:9px;font-family:var(--disp);font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;background:var(--lime);color:var(--ink);border:none;padding:15px 20px;cursor:pointer;box-shadow:0 12px 34px rgba(0,0,0,.55);transition:.2s}
+.cart-fab:hover{background:var(--cream)}
+.cart-fab[hidden]{display:none}
+.cart-badge{background:var(--ink);color:var(--lime);font-size:.72rem;min-width:22px;height:22px;display:inline-flex;align-items:center;justify-content:center;border-radius:50%;padding:0 5px}
+.cart-panel{position:fixed;right:18px;bottom:84px;z-index:121;width:min(400px,calc(100vw - 36px));max-height:min(72vh,620px);display:flex;flex-direction:column;background:var(--ink2);border:1px solid var(--line-lime);box-shadow:0 26px 70px rgba(0,0,0,.6)}
+.cart-panel[hidden]{display:none}
+.cart-head{display:flex;justify-content:space-between;align-items:center;padding:18px 20px;border-bottom:1px solid var(--line)}
+.cart-title{font-family:var(--disp);font-size:.85rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+.cart-num{display:block;font-family:var(--body);font-size:.78rem;font-weight:600;letter-spacing:.08em;color:var(--lime);margin-top:4px}
+.cart-close{background:none;border:1px solid var(--line);color:var(--cream);width:34px;height:34px;cursor:pointer;font-size:.95rem;transition:.2s}
+.cart-close:hover{border-color:var(--lime);color:var(--lime)}
+.cart-items{overflow-y:auto;padding:6px 20px;flex:1}
+.cart-empty{color:var(--mut);font-size:.9rem;padding:22px 0;text-align:center}
+.ci{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 0;border-bottom:1px solid var(--line)}
+.ci:last-child{border-bottom:none}
+.ci-name{font-size:.88rem;line-height:1.35}
+.ci-name small{display:block;color:var(--mut);font-size:.76rem;margin-top:3px}
+.ci-ctrl{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.ci-ctrl button{width:30px;height:30px;background:transparent;border:1px solid var(--line-lime);color:var(--lime);font-size:1rem;cursor:pointer;line-height:1;transition:.2s}
+.ci-ctrl button:hover{background:var(--lime);color:var(--ink)}
+.ci-ctrl b{min-width:20px;text-align:center;font-size:.9rem}
+.ci-ctrl .ci-x{border-color:var(--line);color:var(--mut);margin-left:4px}
+.cart-total{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;border-top:1px solid var(--line);font-family:var(--disp);letter-spacing:.08em;text-transform:uppercase;font-size:.8rem}
+.cart-total b{font-size:1.05rem;color:var(--lime)}
+.cart-actions{display:flex;flex-direction:column;gap:10px;padding:0 20px 20px}
+.cart-clear{background:none;border:none;color:var(--mut);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;padding:6px}
+.cart-clear:hover{color:var(--cream)}
+.cart-toast{position:fixed;right:18px;bottom:84px;z-index:122;background:var(--ink2);border:1px solid var(--line-lime);color:var(--cream);font-size:.85rem;padding:13px 18px;opacity:0;transform:translateY(8px);transition:.3s;pointer-events:none}
+.cart-toast.show{opacity:1;transform:none}
+@media(max-width:600px){
+  .cart-fab{right:14px;bottom:14px}
+  .cart-panel{right:14px;bottom:78px;max-height:70vh}
+  .cart-toast{right:14px;bottom:78px}
+}
+
+/* reveal */
+html.js .rv{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+html.js .rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .rv{opacity:1;transform:none}
+}
+
+/* responsive */
+@media(max-width:980px){
+  .grid{grid-template-columns:repeat(2,1fr)}
+  .mani,.club,.order,.jade-feature,.corp-grid{grid-template-columns:1fr;gap:44px}
+  .path{grid-template-columns:repeat(2,1fr)}
+  .nav-links,.nav-cta{display:none}
+  .burger{display:flex}
+}
+@media(max-width:600px){
+  :root{--mut:#AFAD9F}
+  section{padding:80px 0}
+  .wrap{padding:0 18px}
+  .grid{grid-template-columns:1fr}
+  .path{grid-template-columns:1fr}
+  .stats{grid-template-columns:1fr}
+  .tabs{width:100%}
+  .tab{flex:1;padding:15px 10px;text-align:center}
+  body{font-size:16px}
+  header{padding:110px 18px 80px}
+  .hero-badge{gap:14px;flex-wrap:wrap;justify-content:center}
+  .hero-actions{width:100%}
+  .hero-actions .btn{flex:1;justify-content:center;padding:16px 18px}
+  .sec-head{margin-bottom:40px}
+  .mani,.club,.order,.jade-feature,.corp-grid{gap:36px}
+  .mani-visual{padding:46px 14px 18px}
+  .china-map text{font-size:26px}
+  .china-map text.t-sub{font-size:21px}
+  .map-legend{gap:14px;flex-wrap:wrap}
+  .card{padding:0 20px 22px}
+  .add{padding:14px 20px;font-size:.68rem;white-space:normal}
+  .btn{white-space:normal}
+  .tab{min-height:52px}
+  .jade-gallery{position:static;gap:20px}
+  .jade-photo{padding:12px 12px 0}
+  .jade-txt .btn{width:100%;justify-content:center}
+  .corp-box{padding:28px 20px}
+  .corp-cta{padding:26px 20px}
+  .corp-cta .btn{width:100%;justify-content:center;text-align:center}
+  .welcome-card{transform:rotate(-1deg)}
+  .perk{gap:14px;flex-direction:column}
+  .perk b{min-width:0}
+  .contact-line b{min-width:84px}
+  .foot{flex-direction:column;text-align:center;gap:16px}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-in">
+    <a class="brand" href="#top" aria-label="БИНДАО — на главную">
+      <svg viewBox="0 0 100 100" fill="none" aria-hidden="true">
+        <path d="M50 8 a42 42 0 1 0 29.7 12.3" stroke="#C9F229" stroke-width="7" stroke-linecap="round"/>
+        <circle cx="66" cy="26" r="7" fill="#C9F229"/>
+        <path d="M22 72 L46 44 L58 58 L66 50 L80 66" stroke="#C9F229" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <b>БИНДАО</b>
+    </a>
+    <div class="nav-links">
+      <a href="#manifest">Манифест</a>
+      <a href="#catalog">Каталог</a>
+      <a href="#path">Путь чая</a>
+      <a href="#club">Клуб</a>
+      <a href="#corp">Бизнесу</a>
+      <a href="#order">Контакты</a>
+    </div>
+    <a class="nav-cta" href="#club">Вступить в клуб</a>
+    <a class="burger" href="#mobileMenu" aria-label="Меню"><span></span><span></span><span></span></a>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a class="menu-close" href="#top">✕&nbsp;&nbsp;Закрыть</a>
+  <a href="#manifest">Манифест</a>
+  <a href="#catalog">Каталог</a>
+  <a href="#path">Путь чая</a>
+  <a href="#club">Клуб</a>
+  <a href="#corp">Бизнесу</a>
+  <a href="#order">Контакты</a>
+</div>
+
+<!-- HERO -->
+<header id="top">
+  <div class="scene" aria-hidden="true">
+    <svg class="scene-svg" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMax slice">
+      <defs>
+        <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#0B0B09"/>
+          <stop offset=".55" stop-color="#0d120c"/>
+          <stop offset="1" stop-color="#101710"/>
+        </linearGradient>
+        <linearGradient id="gFar" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#141b13"/><stop offset="1" stop-color="#0e130d"/>
+        </linearGradient>
+        <linearGradient id="gMid" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#182215"/><stop offset="1" stop-color="#101710"/>
+        </linearGradient>
+        <linearGradient id="gNear" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#1d2a17"/><stop offset="1" stop-color="#121a0f"/>
+        </linearGradient>
+        <linearGradient id="gTerr1" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#20301a"/><stop offset="1" stop-color="#141d10"/>
+        </linearGradient>
+        <linearGradient id="gTerr2" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#1a2815"/><stop offset="1" stop-color="#10170c"/>
+        </linearGradient>
+        <linearGradient id="gRiver" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#b9d9c9" stop-opacity=".55"/>
+          <stop offset="1" stop-color="#7fae9a" stop-opacity=".18"/>
+        </linearGradient>
+        <filter id="soft" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="26"/></filter>
+        <filter id="soft2" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="14"/></filter>
+      </defs>
+
+      <rect width="1440" height="900" fill="url(#sky)"/>
+
+      <!-- дальняя гряда -->
+      <g class="ridge-far">
+        <path fill="url(#gFar)" d="M-40,520 C40,478 100,458 160,490 C220,520 260,438 330,428 C400,418 440,468 510,453 C580,438 610,383 690,393 C770,403 800,453 880,438 C960,423 990,368 1070,383 C1150,398 1180,448 1260,436 C1340,424 1370,393 1480,438 L1480,900 -40,900 Z"/>
+      </g>
+
+      <!-- облака за средней грядой -->
+      <g class="clouds-a" filter="url(#soft)" opacity=".5">
+        <ellipse cx="300" cy="470" rx="260" ry="46" fill="#c8d8c2" opacity=".10"/>
+        <ellipse cx="850" cy="430" rx="320" ry="52" fill="#d2e0ca" opacity=".09"/>
+        <ellipse cx="1280" cy="480" rx="240" ry="42" fill="#c8d8c2" opacity=".10"/>
+      </g>
+
+      <!-- средняя гряда -->
+      <g class="ridge-mid">
+        <path fill="url(#gMid)" d="M-40,600 C60,558 120,528 200,558 C280,588 320,503 400,493 C480,483 520,558 600,543 C680,528 700,468 780,478 C860,488 890,553 970,538 C1050,523 1080,468 1160,483 C1240,498 1280,558 1360,538 C1420,523 1450,503 1480,513 L1480,900 -40,900 Z"/>
+        <!-- прожилки тумана в распадках -->
+        <g filter="url(#soft2)" opacity=".35">
+          <ellipse cx="220" cy="596" rx="170" ry="24" fill="#cfe0c8"/>
+          <ellipse cx="720" cy="586" rx="200" ry="26" fill="#cfe0c8"/>
+          <ellipse cx="1200" cy="596" rx="180" ry="24" fill="#cfe0c8"/>
+        </g>
+      </g>
+
+      <!-- ближняя гора -->
+      <path fill="url(#gNear)" d="M-40,700 C80,640 160,608 260,648 C360,688 420,588 520,583 C620,578 660,658 760,643 C860,628 900,573 1000,593 C1100,613 1140,663 1240,643 C1340,623 1390,598 1480,648 L1480,900 -40,900 Z"/>
+
+      <!-- река из распадка -->
+      <g>
+        <path d="M760,636 C740,680 800,700 770,740 C740,780 820,800 780,850 C760,876 770,890 766,902" fill="none" stroke="url(#gRiver)" stroke-width="14" stroke-linecap="round" opacity=".8"/>
+        <path class="river-flow" d="M760,636 C740,680 800,700 770,740 C740,780 820,800 780,850 C760,876 770,890 766,902" fill="none" stroke="#d9efe2" stroke-width="3" stroke-linecap="round" opacity=".5"/>
+      </g>
+
+      <!-- чайные террасы: передний план -->
+      <path fill="url(#gTerr1)" d="M-40,742 C220,708 470,756 720,726 C970,698 1210,748 1480,716 L1480,900 -40,900 Z"/>
+      <path d="M-40,742 C220,708 470,756 720,726 C970,698 1210,748 1480,716" fill="none" stroke="rgba(201,242,41,.16)" stroke-width="2"/>
+      <path fill="url(#gTerr2)" d="M-40,796 C240,764 480,808 730,782 C980,756 1220,802 1480,772 L1480,900 -40,900 Z"/>
+      <path d="M-40,796 C240,764 480,808 730,782 C980,756 1220,802 1480,772" fill="none" stroke="rgba(201,242,41,.13)" stroke-width="2"/>
+      <path fill="url(#gTerr1)" d="M-40,848 C250,820 500,858 750,836 C1000,814 1230,854 1480,828 L1480,900 -40,900 Z"/>
+      <path d="M-40,848 C250,820 500,858 750,836 C1000,814 1230,854 1480,828" fill="none" stroke="rgba(201,242,41,.11)" stroke-width="2"/>
+
+      <!-- низкие облака над террасами -->
+      <g class="clouds-b" filter="url(#soft)" opacity=".45">
+        <ellipse cx="480" cy="736" rx="300" ry="38" fill="#d6e4ce" opacity=".09"/>
+        <ellipse cx="1120" cy="770" rx="340" ry="42" fill="#cfe0c8" opacity=".08"/>
+      </g>
+    </svg>
+    <div class="fog fog-a"></div>
+    <div class="fog fog-b"></div>
+    <div class="fog fog-c"></div>
+    <div class="scene-shade"></div>
+  </div>
+  <div class="wrap-hero">
+  <svg class="hero-mark" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+    <path class="draw" d="M50 8 a42 42 0 1 0 29.7 12.3" stroke="#C9F229" stroke-width="5.5" stroke-linecap="round"/>
+    <path class="draw" d="M22 72 L46 44 L58 58 L66 50 L80 66" stroke="#C9F229" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle class="sun" cx="66" cy="26" r="6" fill="#C9F229"/>
+  </svg>
+  <h1 style="font-size:clamp(1.75rem,5.6vw,4.3rem);letter-spacing:.06em">Клуб чайных<br>авантюристов</h1>
+  <div class="hero-sub" style="font-size:clamp(.95rem,2.6vw,1.45rem);letter-spacing:.6em">БИНДАО</div>
+  <div class="hero-badge">
+    <span>Yunnan</span>
+    <span class="hz-box">冰岛</span>
+    <span>China</span>
+  </div>
+  <div class="hero-script">чай. путешествия. открытия. ты.</div>
+  <div class="hero-actions">
+    <a class="btn solid" href="#catalog">Выбрать чай</a>
+    <a class="btn" href="#manifest">О бренде</a>
+  </div>
+  </div>
+  <div class="scroll-hint">листай вниз</div>
+</header>
+
+<!-- MARQUEE -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track" id="mqTrack">
+    <span>Элитный китайский чай <i>·</i> Напрямую от фермеров <i>·</i> Горные плантации <i>·</i> Нефрит <i>·</i> 0 посредников <i>·</i> Свежий сбор <i>·</i></span>
+  </div>
+</div>
+
+<!-- MANIFESTO -->
+<section id="manifest">
+  <div class="wrap">
+    <div class="mani">
+      <div class="mani-txt rv">
+        <div class="eyebrow">Манифест</div>
+        <h2 style="font-size:clamp(1.7rem,4vw,2.8rem);margin:22px 0 26px">Чай — это не напиток.<br>Это экспедиция.</h2>
+        <p><strong>Биндао</strong> — деревня в горах Юннани, где чайным деревьям больше трёхсот лет. Мы продаём только то, что сами пьём и привозим, — везём без посредников, сугубо натуральный чай без ароматизаторов и химии (поэтому молочного улуна на сайте не увидите). Занимаемся этим, потому что это скрашивает жизнь.</p>
+        <p>Мы за <strong>чистый состав, ясную голову и медленные ритуалы</strong> в быстром мире. Чай вместо энергетиков. Нефрит вместо пластика. Осознанность вместо суеты.</p>
+        <p class="script" style="margin-top:10px">натурально. без химии. организм спасибо скажет.</p>
+        <div class="stats">
+          <div class="stat"><b>от 1500 м</b><span>высота плантаций</span></div>
+          <div class="stat"><b>100+ лет</b><span>возраст чайных деревьев</span></div>
+          <div class="stat"><b>0</b><span>посредников до тебя</span></div>
+        </div>
+      </div>
+      <div class="mani-visual rv">
+        <div class="tag">冰岛</div>
+        <div class="map-title">Великий чайный путь · из Юннани к твоей чашке</div>
+        <svg class="china-map" viewBox="0 0 1040 620" role="img" aria-label="Великий чайный путь: караванный маршрут из Юннани через Китай и Сибирь в Москву">
+          <defs>
+            <pattern id="dotgrid" width="22" height="22" patternUnits="userSpaceOnUse">
+              <circle cx="3" cy="3" r="1.4" fill="rgba(242,239,228,.10)"/>
+            </pattern>
+          </defs>
+
+          <rect x="0" y="0" width="1040" height="620" fill="url(#dotgrid)" opacity=".55"/>
+
+          <!-- караванный маршрут -->
+          <path class="route-ghost" d="M880,540 C820,480 790,430 776,392 C756,338 700,320 640,306 C580,292 560,250 548,214 C534,172 470,160 400,152 C330,144 300,120 260,96 C224,74 170,70 118,66"/>
+          <path class="route-line" d="M880,540 C820,480 790,430 776,392 C756,338 700,320 640,306 C580,292 560,250 548,214 C534,172 470,160 400,152 C330,144 300,120 260,96 C224,74 170,70 118,66"/>
+
+          <!-- СТАРТ: Юннань · Биндао -->
+          <circle class="pulse" cx="880" cy="540" r="8"/>
+          <circle class="p-tea" cx="880" cy="540" r="9"/>
+          <circle cx="880" cy="540" r="17" fill="none" stroke="var(--lime)" stroke-width="2" opacity=".6"/>
+          <text x="700" y="588" class="lbl-tea" style="font-weight:700">Юннань · Биндао</text>
+          <text class="t-sub" x="700" y="610">старт · горные плантации</text>
+
+          <!-- узлы пути -->
+          <circle class="p-tea" cx="776" cy="392" r="7"/>
+          <text x="800" y="388">Ханькоу</text>
+          <text class="t-sub" x="800" y="410">чайные ярмарки</text>
+
+          <circle class="p-tea" cx="640" cy="306" r="7"/>
+          <text x="664" y="300">Чжанцзякоу</text>
+          <text class="t-sub" x="664" y="322">ворота Великой стены</text>
+
+          <circle class="p-tea" cx="548" cy="214" r="7"/>
+          <text x="572" y="208">Урга</text>
+          <text class="t-sub" x="572" y="230">через Гоби караваном</text>
+
+          <circle class="p-tea" cx="400" cy="152" r="7"/>
+          <text x="360" y="120">Кяхта</text>
+          <text class="t-sub" x="300" y="196">чайная столица границы</text>
+
+          <circle class="p-tea" cx="260" cy="96" r="7"/>
+          <text x="284" y="92">Иркутск</text>
+          <text class="t-sub" x="284" y="114">сибирский тракт</text>
+
+          <!-- ФИНИШ: Москва -->
+          <circle class="pulse" cx="118" cy="66" r="8"/>
+          <circle class="p-tea" cx="118" cy="66" r="9"/>
+          <circle cx="118" cy="66" r="17" fill="none" stroke="var(--lime)" stroke-width="2" opacity=".6"/>
+          <text x="60" y="34" class="lbl-tea" style="font-weight:700">Москва</text>
+
+          <!-- подпись эпохи -->
+          <text class="t-sub" x="70" y="560">≈ 9 000 км · маршрут, которым чай шёл в Россию три века</text>
+        </svg>
+        <div class="map-legend">
+          <span><span class="lg-dot"></span>узел пути</span>
+          <span><span class="lg-route"></span>караванный маршрут</span>
+          <span><span class="lg-star">◉</span>биндао · старт</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CATALOG -->
+<section id="catalog">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow">Каталог</div>
+      <h2>Собрано в горах.<br>Доставлено тебе.</h2>
+      <p>Каждая партия пронумерована, у каждой — своя ферма и свой сбор. Когда партия заканчивается, она заканчивается навсегда.</p>
+    </div>
+
+    <input type="radio" name="cat-tab" id="tab-tea" class="tab-radio" checked>
+    <input type="radio" name="cat-tab" id="tab-jade" class="tab-radio">
+    <div class="tabs rv" role="tablist">
+      <label class="tab" for="tab-tea">Чай</label>
+      <label class="tab" for="tab-jade">Нефрит</label>
+    </div>
+
+    <!-- TEA -->
+    <div class="panel" id="panel-tea" role="tabpanel">
+      <div class="grid">
+
+        <article class="card rv">
+          <div class="strip">冰岛</div>
+          <svg class="mark" viewBox="0 0 100 100" fill="none"><path d="M50 8 a42 42 0 1 0 29.7 12.3" stroke="#C9F229" stroke-width="6" stroke-linecap="round"/><circle cx="66" cy="26" r="6" fill="#C9F229"/><path d="M22 72 L46 44 L58 58 L66 50 L80 66" stroke="#C9F229" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <h3>Шу пуэр Лао Ча Тоу</h3>
+          <div class="origin">Мэн Хай · Юннань · Китай</div>
+          <p class="desc">Чайные бошки, шишки, головы пуэра — по-всякому называют этот редбул в мире китайского чая. На чём точно сходятся все: после хорошо заваренного Лао Ча Тоу дела делаются заметно продуктивнее. Рекомендуется тем, у кого насыщенные рабочие будни или постоянные спортивные дисциплины.</p>
+          <div class="spec">
+            <div><span>Сбор</span><span>Мэн Хай · весна 2016</span></div>
+            <div><span>Вес</span><span>50 г</span></div>
+            <div><span>Партия</span><span>всего 1 кг</span></div>
+          </div>
+          <div class="card-foot">
+            <div class="price">2 000 ₽<small>за 50 г</small></div>
+            <a class="add" href="#order" data-name="Шу пуэр Лао Ча Тоу" data-price="2000" data-unit="50 г">В корзину</a>
+          </div>
+        </article>
+
+        <article class="card rv">
+          <div class="strip">冰岛</div>
+          <svg class="mark" viewBox="0 0 100 100" fill="none"><path d="M50 8 a42 42 0 1 0 29.7 12.3" stroke="#C9F229" stroke-width="6" stroke-linecap="round"/><circle cx="66" cy="26" r="6" fill="#C9F229"/><path d="M22 72 L46 44 L58 58 L66 50 L80 66" stroke="#C9F229" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <h3>Шу пуэр Гун Тин из легендарной деревни Биндао</h3>
+          <div class="origin">Юннань · Китай</div>
+          <p class="desc">Наш флагман. Плотный, даёт убойное настоящее чайное состояние, с ярко выраженным шоколадным вкусом. Золотая классика шу пуэра.</p>
+          <div class="spec">
+            <div><span>Сбор</span><span>весна 2026</span></div>
+            <div><span>Вес</span><span>50 г</span></div>
+            <div><span>Партия</span><span>всего 1 кг</span></div>
+          </div>
+          <div class="card-foot">
+            <div class="price">2 000 ₽<small>за 50 г</small></div>
+            <a class="add" href="#order" data-name="Шу пуэр Гун Тин «Биндао»" data-price="2000" data-unit="50 г">В корзину</a>
+          </div>
+        </article>
+
+        <article class="card rv">
+          <div class="strip">冰岛</div>
+          <svg class="mark" viewBox="0 0 100 100" fill="none"><path d="M50 8 a42 42 0 1 0 29.7 12.3" stroke="#C9F229" stroke-width="6" stroke-linecap="round"/><circle cx="66" cy="26" r="6" fill="#C9F229"/><path d="M22 72 L46 44 L58 58 L66 50 L80 66" stroke="#C9F229" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <h3>Шэн пуэр Гу Шу Мушу от Профессора Бадурова</h3>
+          <div class="origin">Юн Дэ · Юннань · Китай</div>
+          <p class="desc">Шэн пуэр 2024 года, собранный весной со старых деревьев в районе Юн Дэ: бодрит по-взрослому, мощный и одновременно мягкий — для любителей глубокого чайного состояния. Сырьё со старых деревьев даёт прекрасный потенциал для выдержки.</p>
+          <div class="spec">
+            <div><span>Сбор</span><span>весна 2024</span></div>
+            <div><span>Вес</span><span>357 г · блин</span></div>
+            <div><span>Партия</span><span>всего 5 блинов</span></div>
+          </div>
+          <div class="card-foot">
+            <div class="price">7 000 ₽<small>за целый блин · 357 г</small></div>
+            <a class="add" href="#order" data-name="Шэн пуэр Гу Шу Мушу" data-price="7000" data-unit="блин 357 г">В корзину</a>
+          </div>
+        </article>
+
+        <article class="card rv">
+          <div class="strip">冰岛</div>
+          <svg class="mark" viewBox="0 0 100 100" fill="none"><path d="M50 8 a42 42 0 1 0 29.7 12.3" stroke="#C9F229" stroke-width="6" stroke-linecap="round"/><circle cx="66" cy="26" r="6" fill="#C9F229"/><path d="M22 72 L46 44 L58 58 L66 50 L80 66" stroke="#C9F229" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <h3>Шу пуэр «БА» от Профессора Бадурова</h3>
+          <div class="origin">Бань Чжан · Юннань · Китай</div>
+          <p class="desc">Иероглиф «БА» означает высшее выражение мощи. Лучше Профессора Бадурова не скажет никто: «Пью пуэр постоянно, но такого не пил давненько. Очень плотный, жирный, насыщенный. Впервые пожалел, что положил много. Древесность, фруктовость, горчина. Объём, глубина, послевкусие, лёгкое онемение. И мощь. Удивительный чай». Такие чаи — редкость и трофей: ловим его вкус и состояние, пока не закончились запасы.</p>
+          <div class="spec">
+            <div><span>Сбор</span><span>осень 2016</span></div>
+            <div><span>Вес</span><span>120 г · банка</span></div>
+            <div><span>Партия</span><span>всего 8 банок</span></div>
+          </div>
+          <div class="card-foot">
+            <div class="price">7 000 ₽<small>за баночку · 120 г</small></div>
+            <a class="add" href="#order" data-name="Шу пуэр «БА»" data-price="7000" data-unit="банка 120 г">В корзину</a>
+          </div>
+        </article>
+
+        <article class="card rv">
+          <div class="strip">冰岛</div>
+          <svg class="mark" viewBox="0 0 100 100" fill="none"><path d="M50 8 a42 42 0 1 0 29.7 12.3" stroke="#C9F229" stroke-width="6" stroke-linecap="round"/><circle cx="66" cy="26" r="6" fill="#C9F229"/><path d="M22 72 L46 44 L58 58 L66 50 L80 66" stroke="#C9F229" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <h3>Шу пуэр «Соточка» от Профессора Бадурова</h3>
+          <div class="origin">Юн Дэ · Юннань · Китай</div>
+          <p class="desc">Сочная, наваристая, фруктовая и бодрая шуха. Классический качественный пуэрчик.</p>
+          <div class="spec">
+            <div><span>Сбор</span><span>весна 2024</span></div>
+            <div><span>Вес</span><span>100 г · блинчик</span></div>
+            <div><span>Партия</span><span>10 блинчиков</span></div>
+          </div>
+          <div class="card-foot">
+            <div class="price">2 000 ₽<small>за блинчик · 100 г</small></div>
+            <a class="add" href="#order" data-name="Шу пуэр «Соточка»" data-price="2000" data-unit="блинчик 100 г">В корзину</a>
+          </div>
+        </article>
+
+        <article class="card rv">
+          <div class="strip">冰岛</div>
+          <svg class="mark" viewBox="0 0 100 100" fill="none"><path d="M50 8 a42 42 0 1 0 29.7 12.3" stroke="#C9F229" stroke-width="6" stroke-linecap="round"/><circle cx="66" cy="26" r="6" fill="#C9F229"/><path d="M22 72 L46 44 L58 58 L66 50 L80 66" stroke="#C9F229" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <h3>Те Гуань Инь Нун Сян</h3>
+          <div class="origin">Си Пин · Китай</div>
+          <p class="desc">Настоящая олдскульная ТГшка: большой лист, небольшой черенок и более сильная ферментация. В результате — густой аромат, мощный вкус с горчинкой и терпкостью от черенков. Глубокое состояние.</p>
+          <div class="spec">
+            <div><span>Сбор</span><span>весна 2026</span></div>
+            <div><span>Вес</span><span>50 г</span></div>
+            <div><span>Партия</span><span>всего 1 кг</span></div>
+          </div>
+          <div class="card-foot">
+            <div class="price">2 000 ₽<small>за 50 г</small></div>
+            <a class="add" href="#order" data-name="Те Гуань Инь Нун Сян" data-price="2000" data-unit="50 г">В корзину</a>
+          </div>
+        </article>
+
+        <article class="card rv">
+          <div class="strip">冰岛</div>
+          <svg class="mark" viewBox="0 0 100 100" fill="none"><path d="M50 8 a42 42 0 1 0 29.7 12.3" stroke="#C9F229" stroke-width="6" stroke-linecap="round"/><circle cx="66" cy="26" r="6" fill="#C9F229"/><path d="M22 72 L46 44 L58 58 L66 50 L80 66" stroke="#C9F229" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <h3>Да Хун Пао</h3>
+          <div class="origin">Уишань · Китай</div>
+          <p class="desc">Да Хун Пао — купаж нескольких уишаньских улунов. Собирается на границе заповедника У И Шань, на горе Хо Янь Шань. Достаточно сильно прожарен, что придаёт вкус корочки хлеба, но сохраняет вкус каждого из чаёв в составе. Как поётся в одном произведении: «Первую строчку моего хит-парада я смело отдаю большому красному халату».</p>
+          <div class="spec">
+            <div><span>Сбор</span><span>весна 2026</span></div>
+            <div><span>Вес</span><span>50 г</span></div>
+            <div><span>Партия</span><span>всего 1 кг</span></div>
+          </div>
+          <div class="card-foot">
+            <div class="price">2 000 ₽<small>за 50 г</small></div>
+            <a class="add" href="#order" data-name="Да Хун Пао" data-price="2000" data-unit="50 г">В корзину</a>
+          </div>
+        </article>
+
+        <article class="card rv">
+          <div class="strip">冰岛</div>
+          <svg class="mark" viewBox="0 0 100 100" fill="none"><path d="M50 8 a42 42 0 1 0 29.7 12.3" stroke="#C9F229" stroke-width="6" stroke-linecap="round"/><circle cx="66" cy="26" r="6" fill="#C9F229"/><path d="M22 72 L46 44 L58 58 L66 50 L80 66" stroke="#C9F229" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <h3>У Дун Бай Е Дань Цун</h3>
+          <div class="origin">Гуандун · Китай</div>
+          <p class="desc">Чай с горы У Дун, «Одинокие кусты». Классический даньцун глубокой прожарки, но не до корки: ровный, чёткий, узнаваемый вкус, приятное послевкусие и та самая данцуновская терпчинка, которую ни с чем не перепутать. Напоминает бабушкин пряник. Ча Ци мощное — говорят, за состояние этот чай попивают некоторые шаманы :)</p>
+          <div class="spec">
+            <div><span>Сбор</span><span>весна 2026</span></div>
+            <div><span>Вес</span><span>50 г</span></div>
+            <div><span>Партия</span><span>всего 1 кг</span></div>
+          </div>
+          <div class="card-foot">
+            <div class="price">2 000 ₽<small>за 50 г</small></div>
+            <a class="add" href="#order" data-name="У Дун Бай Е Дань Цун" data-price="2000" data-unit="50 г">В корзину</a>
+          </div>
+        </article>
+
+        <article class="card rv">
+          <div class="strip">冰岛</div>
+          <svg class="mark" viewBox="0 0 100 100" fill="none"><path d="M50 8 a42 42 0 1 0 29.7 12.3" stroke="#C9F229" stroke-width="6" stroke-linecap="round"/><circle cx="66" cy="26" r="6" fill="#C9F229"/><path d="M22 72 L46 44 L58 58 L66 50 L80 66" stroke="#C9F229" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <h3>Шу пуэр Мэн Хай Лао</h3>
+          <div class="origin">Юннань · Китай</div>
+          <p class="desc">Хранился на сухом складе в городе Пуэр с 2012 года. Ярко выраженные древесные ноты, в послевкусии переходящие в терпкую сладость, и, конечно, Чэн Сян 陈香 — аромат выдержанности, за который и любят старый чай. В силу возраста лёгок во вкусе — не набивайте побольше ради «нефти», прислушайтесь к состоянию. Он не разочарует. Мэнхайская классика.</p>
+          <div class="spec">
+            <div><span>Сбор</span><span>весна 2012</span></div>
+            <div><span>Вес</span><span>50 г</span></div>
+            <div><span>Партия</span><span>всего 1 кг</span></div>
+          </div>
+          <div class="card-foot">
+            <div class="price">2 000 ₽<small>за 50 г</small></div>
+            <a class="add" href="#order" data-name="Шу пуэр Мэн Хай Лао" data-price="2000" data-unit="50 г">В корзину</a>
+          </div>
+        </article>
+
+        <article class="card rv">
+          <div class="strip">冰岛</div>
+          <svg class="mark" viewBox="0 0 100 100" fill="none"><path d="M50 8 a42 42 0 1 0 29.7 12.3" stroke="#C9F229" stroke-width="6" stroke-linecap="round"/><circle cx="66" cy="26" r="6" fill="#C9F229"/><path d="M22 72 L46 44 L58 58 L66 50 L80 66" stroke="#C9F229" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <h3>Ци Лань</h3>
+          <div class="origin">Уишань · Китай</div>
+          <p class="desc">В отличие от большинства уишаньских собратьев, Ци Лань прожаривается на малом огне — поэтому у него мощный индивидуальный аромат, тонкий изящный вкус, ближе к зелёному чаю, и интересное послевкусие. Произведён на заводе «Лао Чень Ча Чан»; сырьё — с горы Хо Янь Шань у деревни Син Цунь, на границе заповедника У И Шань.</p>
+          <div class="spec">
+            <div><span>Сбор</span><span>весна 2026</span></div>
+            <div><span>Вес</span><span>50 г</span></div>
+            <div><span>Партия</span><span>всего 1 кг</span></div>
+          </div>
+          <div class="card-foot">
+            <div class="price">2 000 ₽<small>за 50 г</small></div>
+            <a class="add" href="#order" data-name="Ци Лань" data-price="2000" data-unit="50 г">В корзину</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+
+    <!-- JADE -->
+    <div class="panel" id="panel-jade" role="tabpanel">
+      <div class="jade-feature">
+
+        <div class="jade-gallery">
+        <figure class="jade-photo rv in">
+          <div class="tag">玉</div>
+          <img src="data:image/webp;base64,UklGRk4+AABXRUJQVlA4IEI+AAAQDwKdASpwA+UCPpFInkylpC0woPTJghASCWluiJUCv/AG4qqqyfd0nZOfuXH+9S6NCQD8v3ODcg7AcepQj/6qgLT1++RL2cjqRAtwe4cfw/zBfF/9LtRft+Pa8T2TksYcjJXO01DrdRSqM9+bailUZtpuEY53jbUUqjUoohOSjAJJkgny0zEHVeTnfUIJaPUe8RW8CPkhboK5ZFayjuc3yK+zg6cFzxEavZ7Y6vNjnJxb/ps5k/Hyyz5+JQfglGzailUZxtxb/RwwWcZqezx1mVO4A7mQWYIFmY+jY6Tdd6nwqJZIKjA4JJmP0SzVGbaiXWlUcvhwp3w0YexgNW+4t/oB87S70skfulnaswX+ue+d72fKXB5CfGtyglZ0ldqRyIkNLBunXBMqzNT3KR6YkF8x9+2MkMAI304s7yZ0yKVRm5oZUHeTPbzyGqCYeUqjN128oOMU5MV8nHciFkXKiGlPl2+6YFI0qcpLTbp2C2UW9ZgEI4+Xo73GtHEBo9eNt4jcyTKnTQ/RcHaM7zteMwdp/daVQWvQAwmdGd5Hl0xADOga5oJJ80gQPte05YySprmwALttztSNGHUHggCvCy8bai1oKgeWN0JRoYtNB4GtBdOhQYzOueFGg/kpmgtLHMHbek87FDkVPVr+2EHmDyme7424J+HLWi0NznjYgDfTRARbD8uHuSTi/oLrCoKeFywmNh//7SBjawA3gdVRWRDYmZimQ6EfEu9DdXbZmRdf6481ZJ6LYkXE9GU/J82N1kYLf/eCSjGd1rfS7V+FyKT+u4+XcJ39omqFo2QHuZFf/+mhyI9UBzRP2Kma6MQcF6kia/g6XYjRnc4mZ9D9Qd1KYPSmnoufRWAk7PzyQa4NmGHxkPtNMUS7AghbNYmjZ3uUAZHMdurDuC5EhiwmQn/k+TH+nr/T1eOEwx9XFo5GB2N/nlqMx5IL6nXSOAIBYG/Ehb++PeSuAZnoWCTkeTAs7WYMycVcH4l5nHWmzJBUcvM42OwIFpl20q/JX7f//2GTCxNkgp2chE/p46E8SlBKv2HvlZvi7PJ4JtLyTqTm95fApEIX8/srtkDJzwiGdRkka1Pf+GoijIrNq7qO2bsMn/MDNQPWEdWpKN6UQ7HfFxnSmP5/AfP9E7uQem+c9i9LteYNp20/RtCPr/1EfeO6vd6xlAfb4dUXXZmbzoKk29d3JUv4AoVT6ACftafaXDLZbNT1xVvweiXLHsD/g2INZmi1uUU6DGU4W98PixQTlETYx0VzHJ4eSqHHsl4VGllRSqB5ZA1NYWVSrruYgPQCKg9fPJ3xm3ZmOcDA4q67JB7gyr6cs7aAXezRKv4qXNgkNSS2ABCCtUANuYXGEzfNqu13qs9UhBel2sVui4mhfw0cx/bbwJi+zcSv8p4/g6CyQqyS7yDF9ZokVXrhJ9YWwMhpJTl6qjoy4POcwMyVagAUwdh+CGizZVnCPgqrDkKJn5rg6pBkFsz65uMRHEckkoIVfgyhg/7UfwD8kA38fXdoSkX4Ls1pBSNYmEuSchb/hEERFprK42piAi9QX3xf1rHoMoBuZXkTJcwDAcDobifEQLzvXUbz1PO0K7DhFUb6/ueZ/LJ8Sl/tXgZnQto4AkcRfcS/uwcpbNtqUsA6g9zq+QMvxyPbr+f5da+yVYIErorxW/6Z97HTNebbr1kfwoNchJsRqENvdGozohOf+PyhpDhKXFRgtBTO084TVR9Nnp8EMADS1FQImPF/tM5Y34R8TTBLFaG1r0rejcGl71xNSHcAmmdfwSqF2JA5Lb6l+LRIhlH32Z3UfwSvmUXSX39n72uumYzASG0schkfv24s0Lm6JbA6BckqNs6hK1JmnfBcRzVp0J7NOtsojhleOsQvEJsb5/4jAAfoGCQE0Baps7VSUEAoKUQIjEOtMlRVrGkrt2s21bcdKw866ft0NcCeZsV1aSxqk+Z7VLO0sbxCNRGDFZprrl1uQtocPxs6rLC2HUk9/6MecMpMV3KRrpsjg2ix0bzBfXERpVBlU2w+vAxbcEjpN0JSi5LVW4E1BV1j/POxTg61AklM3gISdc+3P4cYmflwgcw06yvZ+BOW6moeaLKHnMCD8M2BPj27G2ODIXKeuzaeZkafpKb4meXIXC8bhSsv5EZF+9wz0FNqOgtev5pkfVPcr0dNyEWouaRKXTrd902Z3/WwU0/PE4jr5Y/Sl+qHX6k6Ou0IBjkg4HduWVFmb/RYjFWYjAATCYZZZbKcn8/MqbpkXSsdd4WDS8hCQbYJYcPiHo/sO1q4/ANrIIKghM0B/MbpstYrmqnhKvQq+NecCwndKEmVsdbwBcfNaKAflxbww4oSKI2IgevPMu5mSDc2Cjv4f2Mkz/eFVAf0kPhmAaE1eWGgg9oPIw4c62dW0umihttxZjPb52QtwyMtfYLapxagIli2fCuBweWlKntH0Z1eRN6b6mJFtBpEreTHeuiWJ3feE3FfiLxPiBmGdkfDIMfR+pMxk5mCn4Ddek57rqRyRXtF82P3im0iDSzf2BhhfKqgaaLwZKKv0VoDpdQ0nJ/OnewcOzFfZVWj1OLFNnxlCen4ouo4X+SZSB4pF6OCm+UaCFusc4e+0yc3DfXNdR4AMTOjjzyZWyJ3cdG6AAlGjDg5cEJGUddG5q442+zNfu3f9UA6mIx5hFK5alUOO/hvaUTCazGzNmIEDmyV6Y/hK+Asei0C0OHAMZ0D/eIjypthcuzTDL8kV2yDQHIJ9OcgeDzrZJi1ak52quvkhrFKp4fPQO2QHdx/ntTP0R1+i9NsIlTtp2kykeoryrefbu66JV8TqOsQnoGtzG/fefG1cyqI5dyzRIh6kLrnXl2QbmsZo9VMsjdtP0OrDu54D7pslEwTY11/UAOl2Ff9JUDg3PbiGBqrKfic8EVdEXFuWdm60mTbOWRqoQMTHNr0vaSYIP8J/6KO29RuJ9t7t6dIFVKiWvca4J0STNDGUPiw59fWofdQZiVpv5AIxv8o33vmElUXwbO1YKjSAZrH9JaXpTKxU8cVMsAv2HkRrE+GPxjbus1pHFuEbFprglMXM4iimE9k4BQyZvkY4jNKoR3deuYL7R7t3coPOBU6fepHpM45eyjNEmHOXSXZVW2nAkml2+sMU9ViJa7Bte/YpJAOvhk+BRqx5M26+hIRDOEa4MSsGSkLYq/Ln70crcWLCzbsi0TOKZOYfNpsFxPsWi3+pN/koyLOjeTmbmjOHBPX3sbf2L0JeqlYZ0tdEx9Nh+KXconIQUQOUCXmt6AxvoTAFtWj5NEYDaf+rHtDzOoWWPfhN6NZLNIGARqF5P+6epnOu3eirPgO/Fp02kF2WO8RnAjx2FIq9Ifi7jgw98dnFRmKWDG4NyJOH9zCKaWWWMXxvpOIvxAmBrDg8Kr+JKQYcP3Vs6oXUX1YBcBKxPNmLg0afK6mgLVbfbevnkE/O8h2TlV3cpweS9X1jl0U6l9rfNGcWLQrWESmHD4q4Mix8LclYfgmkqRGtPXAPU/njgOin4FE/FNtTslMydXMzg6si+YUxHNNcXIR/YgZx8Lk8xcYas1nKR3/tILIpgwDXhdybQIdtpH0KLJwU4VW7a/TM7EPTyqfS/XOeGULHedH33EewqPuVUgLpoU6LzXKvxpq7SQqmy3Rf5U1II7J10X+rGi2zqFMnZNRq0YJgfa8aOxHrG13tPB+Ah+zeU/nQN7ega7t52Fu6dY972pZg1fn7/Pwu98WJD5KxQxRKZPkbnF2TFOELTMm1DJqRc+bCotcTzrzP/5h6H6rZnT4HoS02Wqbu1iv/mMebCrlNteEBIn/Nci4z2AFNwc5UZ7Q5WPrpVMQqAVOce0b8e36NhkMMak0oVv6V2zmDazsONbs+WMtK9BhkFO4sMxgdDxQYdAYUx0oG9N/JvacsNpwu4PjRyv/o+1BtXLG3vouiYxIHnYCTLFtk+XPQUhoSiDlBy+pVrWQI4PEpGju1E4n1wrL4OFMtFT6NAC7YzJb9OfM7Bx3bEMm6WZsKVzIrTEMsxqtumkUtlZvRorGtTocC48qsjsJOv9QJUeSQEPvjpX8F5PIGczHHJR1eI20IAHAd9zMouMmBphInODfXUozbzz6OhpuOcuCZfbfc7dqKqkTO9koOXe+90voepEh4A5mQ0aXkLVN1rKu/XMqwqX5Q3anXt+2zd96yQjzdU1oOaL49axjAEw3QUCo08g3V6TF6/IDigagww+ychYzqjNcAulDaWHY78Litl5RzZhIZzvzSL9O/v6S3XGcUeQh2Q3jc9SIFRbVQg+YsGsLfX8qr3CV4rIsJi6VeDmBajtJl2sIr2TxutXFNog8sstRPkHkkFGiVQg3lO28hwT/zQ5lgrqzB8M9LHCYAmtKeMcGtcVpx7vPukoNGBEZIW63T8Pht68Vy79qSSCtMgurLp8IgOxVBLsHTKfuMrScy97jlL5STDdA8QEhg7wrCwX7HtkBn776dV4LbaBwezvrnqPt9z+5Y/22OWwq33zTtWVpBIa9Gi0P3YiMfvnOdSlh9PN5yZNkaeYjli1Uhlpu+2fa4Y8YS9luFnD8m8lPus1mFSH2io1kkaYE/Qr6vwDBTSnok07IsjPbP1nInSjU25/olYu63YpexxKI5wpvx/FCI3Vkci6oVj0w7kXukec2NfD+6uRz6ADW2D5jYdLaHfLoUfbwI7438JPk3WQydMTCrH+mkTggZXDSkotdmycEuPR2i6WzsN80KVGbZhHcQeZeDmP5BO67+RwdyCxR1zElxZ7S9Ax3HMxpzkxRqVkVC2wiWyw+JXPNEUV9fo0nnj+N2PY28NSEJSZRIcgqDp+k5oxFuvoIqirF7afXQcw8JobQLQJTo1XkWRh5hL4xI5wel8pxoHBanNbjNSV+eijZQUeJIA1d7FUbcKUymCniU8+2ePNNHIhbi6oWdu4kVxI2FKgNgbwPExHX+1GIxZsClpIKlJfbBnYIKSL1AEvzTzhf9ie4YBeJHbUTg9f7NCjQ18w5fh9bdjmQYvbaQfYFSEfyy0puFkEAsRYTlun8ym2HwNOUADr4ER4kRxkBAuN3E4X3w6LsA/saRb3VwfXnHpDmSAcQsb0KHKaGSk3Rz/MeJIYTcycYUB0E+O3UXeCKsUl0HQg6TffMr0vUuoss4wLqsJU50V3tq4JRpm/4ECmZBU2tPWwHNx6FhddXTV5SytckMXSj2I2zd3BILA0/qnW+mArFSgQFyCJRK8hclfEAU7QrxZ8vtX0A/CGq6Tu5LSBEI/AMI0dJuodSoQWzaImyOkVxbwg/qLlUl9yH3FY9W/TqIUlUQO03v2NCTmGIiqzUVNFZp986OARfUY0aKKOv5L+zqhzuTO6huxKf2cHM3pChRPhFm/dT0ir8zBRljEMbBHYQPgfl6l5CmaAu5JtLSII8JE6kOADqj2hV8oNpDefvYnemGpxFh71gW+vZzKTKJF4bMBndeAdW9dkmhlT9POnbu49WTInHxKWYAGAWzTBnmeYHgUyix7OaIRBcHuEzKaAntWaHPM+oP3PKPYijQaZqGL2hXPwcpygB13wd5T5KGsQ++Jhpl9JTv6GSzA4uINJ/msirioy4STKnWdDnxq6ALBlLNXlddI1S5WPp5uLQAP72KYYXHdN75Ye7sm/hdsAdP7hASMtc407/oENAj/XE4rJaWVOafsUqZL+cF1NXTNzwAaBNAgU3XTlHpG2qPQBJFjztI1lr2ylgMMSvpQpK3MW+FmYggcQR8QAA+ANykmTZAzf6gUJQAr5mgX+gS2ds6JIRKaAwKOFQYIdInFm7jgg8rizEjVPxXnWE8ImFVufv8QAQstjueiA1y84VNNH6KHeeNId/RcEh8WFWfFy5dACbsNi/pBzP40Zp+thQBdIFLK5KCZckqYVgLy/rO4ArPzA2dDRA18wUhoPDZAM2ZiDAKbllGqznQH4yICrQQM//4Giii9BqP4Bc0jPAH/5SyYJ0ztGMAAr9jEKw/wBtwDRYXOgAAAJfK8PgCPgAAABs8YAAg8E5kWMyJkRMRL/nE6fUAASK2udJ1C34AAAAjnkrGxJNiPAqQmMAAICnJsiyAvDSqnDVQjoKdXd5kAABfpAAEp2DKNy9kGkkMGHQAAAAF4W+63IgcFJ08oulonr1lwpdgGDraMZyoBrReVAG5sXWVQvFIeehKLYAeg0ABODtMR7wz0B+MWczAnnTNuXd6TWj8jITNKRX85FFtQ6AJECFViBcmLVG1eTQjAJBPMTlFsk3S08Y1EKYW7ORorZ8LWawNOxH3fmTR1qlEuzZhy33zCVlr3ZTqZzI/wMHnR9qG0+HE2VlDwSXAxvVQCCKS1A46pF1+kzFoPqz+d8nwG/QFywLaYWeyKmDJal/vbeBijmwzTCfQDetHO4zqWAGwUV8y36ZjxSzLLkY+bQg24gqNcBQRmeq6LvfpHLmMHGsTD0V4fDeHVAsn18zKb0b+IaHwdNDZhr8pLXCrp9VbcEHUf6npaPShFj01/Hs5Ijxn4dqayohXRmPDiLCJ3r1Sn1n+10ULM/TPj6c16mtvSoKY9xgi4Zlx8AVHM4tTaCbVu28EYQaF5Qbc7MXBV6mSqIP5f4GM0auAhyu4gxTiydcs/EKGR8C1yq2VNVx6UcAdVou1EgFEYMm/BGQKfGuILCACDq/ygMrGU1xkUZmu55FznwsPYLb9WosjV6uxBz0PrjPrcBP0OFR7weZ2yxBW+ytRaGGqOVJmu4TkcWAvVnT8Jd1QnuL8sWb5fvGbi++Zb6yWRURNfdTkPfx3emQzDPRxQ/svRjhC1NIPh56sR0dFyc4x1qqB8M9rnhzszyi3Orl6wUg7kim5oaQRXHImU7OIN/0rcgQRhKpP0kc2wIGUKJacyddAEJFkZDEJgwAGj4o5udzawyGAOj7Ov11aCozEl7L7vzIpYr3Fvs3jf5mRfDyvkH5yYJcPX3elAL/wo0IdxEmDYWbIIeWLRSGdcjkQykMbsE4B0XUEhI0fcIFCIGga/of8o660byIGJSwmuYMgDRUxnpIwx0X7ChV5H1flZ4jKHsoG2cfZmBeOASOGy88b0tS9pLIPg3Q5Uwz89HDoqv/fLEjqB9CBv/GGqcLAR7brOc5rJiNJIYutyJN3JaNpJ+aAMAZQO1iHG7obZ0GzCnxkoOqaE8EBdkJ30nYYvLDk+87MA6RnpVk+rHyudN4TpAv25EBfEaohJYrBHB4WyTPgAvdyOaldb58CAGD7vCwbFqbe8W6znaQxnO0rdlXijxul3S7rwqSMM38IXLsrUcjExy3mX7CBT/ERJOuJ4ciJFyjtBYwiRByXwby0szNJr3R8JDzQF5heIplQxQSP7PeHkTQBFEUgljYqWBZEunk7N4IXTv0wdwDkG9tCPBxFTzVsIp0LhUWLj8RFoSbWI9Q3oq8iTR7Wuzoo2yqkp61WetaC+Mc5hGxRB7gp1cPmGUONefd/NmLzXx0SSud/pZr6hloJju1Gjn1ex+B1j2LnyqlTzuSGeZ/NrJdRQ1wb4L2g6TtXH+Mee0j6cBRtZ06mqDgow7uN9PYksJQxK+a39l7uxz5BpRPdqAPdociOpSZFhnrsE2iUwbdTAX98PHcGbKnlb74TbHjgsxJfuiRcdLMNqOIV1biQpX52cMkibW0crKym3+1VrU+y24SZVAfcR1hAA0z8XKZ0Gjz0SvAoRDFhIbmajyTdxtt6MCu7pAyjIEmabecAenThVtI8vMEWpRzhZWOU4qK61hQ6+9N6meJikwiI6TOdFViyFv7ynFYpO/Sk9ALINR2fG8jKsvqDdgJ9YBeEbReaX8PIxFg0biAqm4uw5d3oUA4gzvLafIgjJI7FXiIWkZZzuRDOSc7il3TcwsrDXEmONfzFotpSscn8WrkUpU/QYRGL/cvsTFSYXGPc341EOQGIefGRkre7C2UnEDGVSzP+dAEPtGQmA+8ZJYO+5xDYoYjIC9iHCYMiWhC6yEDwPwkHUmROrl6bXDFwOlxVVKDkFYsJZZlRflJ0MbHCeNmEzYtuXmQrnx5gOhOOZ1xTsWwdT7NW2VMtJy/g8MAOM3xOdlHFwHJs/4PeeYbocl1JBpUal0QVw3UGQyFnheu2XzfthH8myDVq7gzx1qpGLlYReF6Xg9x5sW5ir/gVGZbylmpIWGmr22k8FOxuVGLGkswTJ/1Kt5ilC6f0nC28IIkQldzENrcR3RYHPpY9LNqkuUfdZLJTFSiJD9VlBGYHgY3ALaTBfRt7ew8Ez9N4uJ4rEyBPIFtsI/6JlQY9HGjuB9z+sb0WZ8SB65lCztZVGCf87Zk+ev9qOMsBM7omCGMOmFFXu7hFbyObMBogz4wEHUJo/uPsTg2uvCLFzIqBsoq8kFCdGgDbOTblRDuWgmq90/1wms0G1ZSFmw5EBZGzUL44JavyAoE895Zsn+vNcuiNStVT4D/HvrQI+NwqL2HeYvuPaq6yiHnKEh7zXEQoknbKFDQgDw7Uks/ymLz8xRt0N1n8z1WoEyK1GtrTWsL6FoLPXfgP4VLpNeU4rE7a2lZJHZUC6Spln+tytEZRllvK9Hv9I8vic+HZWrCvScq84dNWnSkoKFlhUx3iLKNdkJ5gx45TELAa8JhMplBZ8Xo/27apGNuKgejokIndwWbLz45nbx2qNEoVRr7R2LJM8vSND2XnqpEq2v3gDuVxozC79UWAmgQqhqGcAN2bpMtedF9sgLqQ4Me68PzdvCOzzQ9aApmRAbUmGL+L7QUubnWs3SYfAJdUFx1G78ateYGA9pYrbGcxA/pvef/0i/2277+E/FqwdOLJ36nCx2LVnDToE93YvF+aQHbL3eZPUs67d7zUxThZPgMEHn4nnCrEZAQmY4xIO/zL0dunBZkmDHKUSbMtyJ0WEU/Wm28S7n94+IaYFnyQtVuwkQiMjTymVYUprzX6dKKiVaagj86ftVhjUTIbMX7baFGPPrOtwk711ImkQXfwZXiajk+/WJIXs3oucY8gpZHEe92ZiWeo8Hd4koa2f8f9rNNFCmiN2eanDTabSD9KM5JSVOaEI0lZk0cePX3vvwL1M0AsFZvafTp8GF4h3ThtbR9QljleDmCWdXXgiaK8jkkfnmUikQO8WGNRGFORfzJ0UFFRsYzE1vN6Pc1+O7THZR6GHORlQA5fJyydvLd4FLfMv1Qn6T7KsOhcjJMzK3BksXVgQ92PLDMn+nnwvRtQbFUNB+DOTm+Qe2LgZYQnG3SBNgvcIiTe06GkCfk8f0rWolq9bM4phugwUo/NHXiFvcU1LHJEjNM0QUqBbqFF2B22dNoCrPulXGDEpfBuTlG2A4QuGUU2G81FRoQ35bqMPkyJ9NdVtQzNiWFvSD+rA2Us96nTRhHpLhUbbI8qH6VCRyJERduPfIQN2HURWzZaGd4sQKZEWQyKwg595velwrrlOaQepXgMdeYGOVfhtzhu1yN10TQd95kZXCUkcasse91lSY89HVUueriVOxsINisvF160ibNBITCpEZ5HTTz9EsvobV2TtGIuEgzDSrIyQL0PtZImVsZma3SCvKm6o9thcfFSKtkx15TzDyLawaNB2/45P/dtxy1kb8fK1YvDDDEp/iMbIIAHhdAeHYLNIK3CzgZ36oNblY6cLnmTcNBxZHybmafv3GNEGggpT1nu1gxXrUjv3pp8aDEP2nob/Dn0sOFON0mTnioZ/RHdp4bpXEtpoXpr6bFkuWWrMHfGAGgn6R2SYQI3v6jXhV9657WoElMM4aFP5V8EYOwVE/V4BDPlSz8snwytwnvkHlMFCxaGw41O1CPCSXpzWYCRF6ttew7hsh4iqMY6WJN8BP4yyqmPJyp/a4mVULtVnVqFHnIhJa20jix5xyz8BBDw8C2kG4aJTfl5Finq2MgKskVQEOgr4FU2ehraPdLCWXRJJNDLUa/sTvqOboY+Fip4Ve2+YoK1wiXEgVnIbOqF2HR10qHhB8Da/ipnlUgaDvSMFf44bsQzAlCZY3APMFhVXs3LyfW1J82eKa+GJNSmriwxXGmQKADmkHaUeIO2YwjZkCY8PRttxRplPo78Z88IEczWOW+ZRz7twqFjHAQgu8yZUb+MpFoue7yz883+gCuDUkHMo7hu6BfSNwYFFGYW/qUeBWfjIH3HgGxM1tr8Qpk/sAD0nuuCpvO68/P3ueA6g0OTCmVuu0POla41vjLN/cHp9P0KZW5pYa4edbZdYhhCnx8Ze8kixCdtrTC5TaDOBcrUtsmoaptB0oT+WXa0cqiCxsZ1GV6Oo+syswAnOzJG9jQs8SgQnBTpezco4HnFO+PeuVKs5xltUypyyESStZQUFjmdfyeJ+QnlbWZbTcU+ah/I4VT8koxVOp7lQYAlD4avNnyY3RUnWvNpPq3nY0s80zCMwawtfp9sWx8JWaG2K/H+/+ftX8kOIuqzWnJdeSbomZ2Dqhwvm66+vUObztFhHuVLGEncC4PxWvHlpnRopHIOcSDKqNCF7o+kZGIy4G+9vzhcF24kXyosGF1NKmYCoDwsewrndiLJvIfCop/uqhTY7lZxHtesc1c9sWBEwvbxE1sxEsoFKU7Za17aFrPnTk89GCjW//Yu34tKLMBliIRgXbi/hgpk6xEqr6qMgcL1lzvxZjFMyjaIioVohTVztuZRh3ZFedFADkT+3atxUrUNyLI6sZDKlON1fxJMkb0ssHBuhie1HHH01z3LyFHcqN6qFM66K1X4wI1SNzTD9V+8SVYQF1EKIODpGfCCg/qSnYz5i96ud+V0FXzOVZI1z2U+rsKLyl9JSVecpodBxyr3vxM+DY20PgEd/Shsv8Peb7sH5BmEGTmAjSjRVSRdYNUnuTQAhr4JMwKbZqlM57MunN+M3XDwwYwngmjcuo/+7d/otsI68JRUwTQhSqLikBNx/GHnaAiCBp5fjfkv0VdWPWhbp99oGK5UBmSgFhAOIuH98UwByMaZxXbwQ1aK10DWtNqdK+4ETWWu66jExNaLtw7o3szem57FdlRF2zlVqoFOxDhWYCZ0dgKCBxnqriqrVNl2FIt1r1cvFvnxzHxz+sGT2mejyoOCmKZ53UchSVjLFJMmT2T0Vhvn8wFDSgStlvj7ftWiE6TSEQO0eX7aLc3hz2lMDsCGc0s88pUijam9PxwHT6O3G3LCLXSMJtMjXr4eNOqv9S52wi/2r1t7diF81spokQh87fsjcVIInNoVxHuLgi6OxbbVkun8KPiYnTI96bcAx42Ds9IzUIrulqlOKFhLBtQOvjyQBUkv8FNTZ772FdXdu0XGtZCcXQ9700FAg3/DjBSaqw0T1rRoXDKNQL2I/6PQDa1VUGnuuGDqd4aKrs127ZWjQT0Os4Oh/uZGN9cBVfHq31m339f2jzm36A0J9qma1mU5CeiEfTz//3mXNTXJ7ueKUt4Q7VmagdjQeq21AwPa9KrO+bt9GrjDmMLy2wv7AGVdlPwM1niZcBqJyMJKC0Rb0FGDDzmVI4ylPtOABGldYJ0Q4Hge5e/v9lSMMgKDa1PudEJZ40S5HrTawvsk5ckH9wY733w1cuy3bcatkhTOl/JmVJ2rKSP/jdsISTYNum1lhbNjT4qYNth1yRB2YwM7gGCz66pQkAQCeN2wQlqbAXEGv4ymhV1f4xoihf6JboUiBg1+rHRBB3v1f7S1yfRMJ7TKaH17j0jnkC3hF9UKB4Vxcq0zmWwzrjvPi4JPDcPOO2VMGf+pwIe09q2QsEMy8WqNd9rdlP3+uTkDB1uiJQnrHp3Ry0+xIK83Zuo2YU/nfCW9sJEqCs8m61eTn1fL435i6zyrokNlmx5RlvMdlMrSWnh20nK9aKicISOJHwamSiBTBEpO6juGi42zauxOw8eLHdROTzkGJL21fPD8qC6+j0ddgsDsoHggNMaE7C+wCljC0awH7gVK96/zoXX9yXuTOzWQrUp+GExjTPSHul6rijJgiBvbPjsEgIWMx80o8U4AsMYv7Mo0pDikk3bJpKQ6HcQLSHgRpf6r0UiXbk5t/2gfn0Jyb6u554b29q/i2vYxGQ2aCM8AedJFdZ/HLm/IDfSKJcQzpIgNke+37Z9LNbHK7MwOExIrqaGrecr9TF8f0q9TfOjI6AtsvMS+X4tcm9siq8SUvwHYAB7LZnPWvmWHnTcGTODgZQsRvHhBnZDFvjwm4u6Fm308xGNercQWlz685kmTSs0M94x+/GTepSNDcLNJaf9zEjNFswKW7kEMwqqjBIYmrktvffLbusGElK3RXOLXssZSbiyAqyQPDghHUoeRVCFSdOuEgtvhFTzVgpieomnoydF+EidkD47mgsepTs6gcJROnhu1/1UtBG6XthfjTLG41qqQGfe6U0bgLR8gIX+BdHJzwOoQ7OnR0v1DtXWdzI1l3m6yd2XHe8aM/XBCG3rov94pjkRIlrMzBFejPFzzSer0H4HiXciHLRolUJ7cMFW4Sf6bwdGZ8CNKM91Z+JniYwoOpF5n2NDJAumemXIE+Liqq7qeZ6HHntPZYZhV+KkRRT9RxjBuyKHWyWBMABdO/qGHImnc3vl4j3+9ZMP+t4euKzOzG6FKw0UqzjL7G/zDJGcp1NYtaYSeX/Sn4VcA3CoDefutt6JjU6YIAVvncPpRHYkDGgNSTBV5yl+5Y9sAADJ9hIZJq5AO3IXxcBzRlThJXUHQUdS/RBzoKJAR8iqDoAc0mfohbkcrN++HDLI72DGgl0AimI/z+mlVXeDrKQn4bQkFBuuAh5rtRsYcKjfVByw9u1tJf3NfsMFoCvVAx3hNWl5htr9oLqk4+KqSJ0M1BIX8b6aZmoAJJl72LSrOLrGOLbzbLTLTDPrHSZWkDa88Q7GjPxgmahpsBTiH/tfSW2Bu09gKYWs1YJygmdRDcrbqWHCCQc+RWLpnwqfQzu4wZuvnASRBq416S7xHUbt/65NCKgxIWMTRO+vbb1ve9rzTLMuNfm1ND5nZDbjQS2RikcMb5OBweXmVf7jF5ieazYfMi9OGnED1cJUbvaq2OjTAsEum6cf2Kxoi3+kXscGnMlZIQzeebho9PZDt8qYGfFp1L0f2ASTAmtS0ZBd6cLNHfY5PZwCv13wjgATrTMezE7IEA6TgzQOh0c4bALSsJtpOKwIfDDgzQ+K1S8GmGA8kmV9SdQPROKb8OZN8G1mN1D9IFy1j2vaD0XkBx9cxU79CsgVwDFIKmRDr9LgAw3qBusmwU7sNtkphON70HcFwIrn6FOr3G8HGmP2eUrftlXoc2o+J+88lUqvRQHS7lXi1ifwe3EeftA7QgKkoSAeVNhLRU/dpbdVtF4qiWuK41LshA97t9kxDt1pT1NRzz4jAeu3hCNZezEK09O7mx//beP5Sd5BW397dw2erZFvsGfdrgO2ozFqkvfiADK9WbnaPuALSuIY7ef2gxwYb3kiEwR+wIs4ErLUPpwcGm7X3Np+PlBZvSEvuDmST6YN03R2+FX/uANG/bLsaEqRpi8bIV455dOOFs4IZFPcFwmghstaSdxSqibVHGXBhP7akglHbcuigcf/oZgcwfwTufWF5kkrxDJiB+pNK33G6tnm2iKljtIpgdIcdnQEYIzy6oWKicXYEytU23viLoeCInvUrd6xV//hCLldssvMpbY74fNEGv8cli/uWoOU0aIwPhPHSpuFGVbUktXgpnajYZ/oY0pdERM91NTtvtv3pctZVbJBvqRPjdPazk8XeFmYv8fx4Po9bLSC+f9bchWep/B9xTMWyyj+xs36szTMVumUB6iZH93ZBNyLIGF4hHbfUNlMHZk4fUw3l7snrqHZWRisbqkS4pZxJYBT/qAt21A45btwAY2Q9/fRkPNmFBDKucKP9mQtkbh5o0gjvRiFMX7sYunmtOWLaeZmIdV1MzO3BAXxUvaGJz63jvTVve5u+XxclJe7JNIFGZUMdth3YNpYxarz+YpCBULL7+qce6LLdvC5nZ7t50QcR6z8KOiuwIwNzeF4eLZuUJutcZoPnqNAqi46DJLkBq8EStcJBsmjzXM/67CnH2hrDHzyW3frPvS7LAtJbDvN2gY5Oo1CPN0jOIdr/Poyy3Jgvx356KuXKbtFsCcWS4Ma72qUcgu7K1iSN2tTjJGxIe8RmvTBoJwfuGaRK75PuNOX4pw0/9wBUBfYO0iY/7bZwt5MViYA8Tlw8O8HpRp6YcDbiArszrxuvWlCS8TvhcaMJlWAiDJ8wjSTdvZpbqMdm+ok3kYpYYI6SXYTwYKW+CnZfotLUO1QIBwMknLwuTo2yzZ92KVP8pzsxLelpP6EV5dvsRgBUiPNRROBVRw53gWDcD3MdQNbRc9bk8LgKkpKgYiNmEIbYO1DN8/szRGC2Pxkqi5RNtRd8U0xjWSqSnt1jtCggwMyZAkSiJ1vyKdGhcAn8eBWDMHBj02kIcbFmHFtRfAopCEXMbi7RofWZF6JM+qKCyHaPZjZJCLUV06Ru0Kit737DgWx4BWjoI/ngZmFUw2MW8AAmoAuaBzz94TL2oNn2yMNEGcUpyW3QnYjhI16wv7h/n/x3u8nKSLCsYFeZB9FP44CksTMjElJwCQh2mCXYL7Rul/Kpz9iBJKPV3FG1+69kqyQ12H0wWtv9jm43pFw64A8RbR6RmWegKH05zC+G4N6HKZEg+0Pn7jH0zMFv2D2bSlcz5biUmv5wi6qdIA+DgoJT+ipXccweJuqzSwlRNjtx0B3QiQNkdWw3DfJJ0SNXqL5PpQy1tjUCFRhnkQtL5WxkT2WtR5H+RJcqeO9UOID+1DlWG+F/PHU2B6rLrEbgNVP7YGy9joFKFisWbrfpaTH+/VdI95pMv2g+sb2I+NsTpmvrI/2ft+1ywiY4855TW4Ky2lLql1kn1YQ9a0ekJa40S8jlvz2IJ+irRUzQLLLA/y5/xsY3A1WUMy8gIuN30sNBSp8aRqQmjQqR9BQEyx9iQPhYDF+MAfjIOjO8Mf4za9cOlpnxZSOjPHOAJriIXoS1zg8xFxlQ8fNVIgNdVTQZOryD5JmKuJaZi61CD/t9mKY/FlVMuOSZue0Np4e4pmGPFtzwNM+XH/wIFLwVuGt2gM8lZ7toGj4+3sMZ6bLvsdNvZjs0LcMfzjJc8XwerasJy9vMdVzXcAy+l3MhXMIkz1lkZuXfYBkOpx1iFrw98d19CBxME9pCujtvM5Z3gWWVK+lxoTeHKzNQhEWJt8lJD9PrI8ompd4ohXgnmDdQNI0s31355sM+ACoilQOrp93lwpEfLAJm6EGMkYsN/u7BmPvoYUM6M1Tg2m3O8oQ0m/Cfrj3Bg9uvYjp/kdfgi9vDZI1KFUJFY9DS+S69lMa7OQnHaDffEt3P/y3AHWcYdL1A0pnbN5j9kTRvHbpqd6adq6pjyVbpVF8CgHfRvTPDAXOQrCuzbIeGMsp7mHUxfbBB9WDTIAFBOMRnZzyPKJgHCcQpLkEGaFwcCim1PIgNOwleupIZ49cIaA2XSRxJ/2+3pHl+NqU3KtK8kyOHu2YqxiIhsXS+AW6JNgauV4L2csUtIDx7aIK0BlU+gNgVqVCkDQt++N70ScGjmMAn+PLAAN2fLJHtRGFImXHPjMnJE66XhdrgnXNHozGljAB4d1DJqdGhP5IYOr8e8YwF13ZXbtrZAGb5nP4kKtb7UIkIxt1mtkkfLACpjsMKg58wsmErKBoNS9vhjtzQhr1pxwQ5jQq26DM4n6P+xY6FtORUQiSpymMhn50z7Z4t0cgWA2r1UDHQ+eq+NWBU903agvaepCeEGSMH+XP8NQg1gJSrdm/YLtet3Q0H0HvrIx2mKrC894p/5UY8nhzHE68mDAOc1hxvo2ETex8pdsLIJxFzQHntCdTWiYcXecHNUusH9yZ54yAwMiq4aVj1fWCN9Yvvfw49SuQ1eieDMTLLP+nhxy3h8SPZf/1TeZwV8Ym9fgHQxuX/Imx+6OfyG5+SX6smUx/zc8wlZ+sbfFQyJ9k/xjKLoQvfD+VQ1KBPYmMRy5xwin2fOPefXXHnA2j9SpZX4XZzfXCkUlTla2V6WbPo01qNkjR9baZ4JcPm3YvOLwwhd1dG9F6BkcHAyMPhNIO/3p4G5+g+MnqYVryLOq4pWUSRlssfimmp6ghb7geLvkH7wvgQWmDzbMKwpmvZd+6sNRtBTMt6jlbfVkuxjnO35WeOcn73Ple3vRbhEPx/mD5nmn390zBJm5vsoCvisVlRjJoiMPKWR8c11flMqrLOUUYnEiwyfdAq+HQoTj3dfLF+JgNeJ3KL52AU0IY/AiFwui5wrUVCctk5CXC5EX87gs/97Oi1jZKGrR3sL8zMDGaCUP4LfjwNG8lwAxpKbIFOQIELgrPvHoKPmgHdMOsCSnMRcm0ixBmPncZ5madZDpHHz4BYvx0z7ohW9qIROXYMlR5hlQxoPhkaNvXJMgSnnCCcBMIE4Vpym5Bm5pWHR3le8o0gGOmH2uLvHKLHsyFuGyvWsgba+B1mjyLbYJQlILdu8ClYc3ZVIWeni/yqUwlfDVD+KfrMJeO0fTlUV6camMyAgRtB/kaDQkyMMkMgSTOAmAbyezNeu/KLV6xaK3zdhN8rrEIRUfOYMq5nSjFvOiflw2zs0NVBLwv5ehEAWc0QDUs/m6T0ZuXhwB1LyMIwiFPE2sBKm4kQZ4Egqbwyie0ect+N54J1P/qaJeaXwpc1Ir0E/HkMEW2PbG5LJDcrXnWospfBAdkhhfGWRlmMLh72GViE0bHw3qy5NmUnjnkgKpVnAXMmtgXV3W4o6bQ2HTrByC3xMA6a2r+nrhsJ7tHkMbYbg0oIB6CkbunDobMGZXUz8zD2XEzDH0KQUtqtlRrLE0wUXSx0JHWa76aGYffasTD/LfomOrUsvW9a3XxTXeTu+LCf3UIAMWfRQ+azas5XTYLLWsrU5vFJDR3jcBBpJF6Srkj6pRlVLA/3akVQtOzRWcpSTN8rqOxLIKKZIoA6BBSMrvzBuJ227W9iNCO3rpDd6hZzySFgMRWVi61uWG6LKw2tubWV20YsmA3ZFhhzcQPhn9Ga0EBTS1buBKAUMRZa4qMA0LIIr06Gd5M8ewKbV5JDgBU98IMLjXHYgK+x72HptEINNvpz6TbW5gS2Cdahv9NTPm2cG7Zpmq+3U4+Drqwm4C2m1jaK4JO6zhtN66QlaWYpt//C4XXLvw3BO3S99W1SXQahtuctMCCtN+gRRn2H6TeP9QhbJhrrWRHm2TwFW4HF7c7loX2Wt8HvGsx5SJ1F8iNP/rOLh36C89klOyFjekWHAM9a+uhzddcAn1sHz+v0433Os+dR3o/oy0dwkW7XSDGAm124KhHKKQX4vh2Tk+LuWaXWXVXSpj0Piv2/Qp/3GQKSER8n4jUyfmUPGUrfdC4AsiR7KKZUJESkQaSiaaJvLrMSI9G0tlbw/NDtIn+HuOUrNdEg53CRYprmNOkw5pKZqTJ+yXd6gj/OarqcJ5id8wu9gZXqgrIIPUEsgn8Kj67tL/KsFxKZffF4DfBVddl5s5XZIR+HROffUmhMGgKBg/bfyb/Wn8pBuz1fjXlhzWbvKbhRhBtPsP+RWyxxFMp145MIhjrMYTuAGerhQt4vHRWKYj9UroSwLD+uqa5woDtCYdWVE1HOPlmvvLSfl8/c6+aJrBMb6dRTkNdruA9RixuSH39GDKjuD00UDVFsoS8Q/ckFekQ0QR8/+WETurHQRnck1O/qyaqqydM+/XIJYgprMZwN0b+cRfX2IMbj8mkkLojRs54yklkGEfTRbRMsIB9UPXnA/XsKuOO5rrYJgBUtufNLk5nZKY6tCbTtk+SDlPC5nYRtmN4wvlKq2XD4OgeUuCHM0H78gd9cw8eHqPJsoiEm01QSg60meUeS/ryohfcroepvN2J4pzxO4jKRp5QfN76tLwurN0Vk/0jnDMNiFDtwKThMg7JQ/w6hK3dAS5/9/dZGgzfpvxIOHvOR50FRKLrN8v/zTTbrUt7qF6cq4NARaKLKEQChUzwo44kZZQFgn3mieYCkHH7hZp4yOcj7lvt0fJWTIdBkWRqOepfcuB33gCNMUBfwUwMa3hKwdYqc3HbspjkCkEdfsqNslHZr//A+MJX6ZHY178GsszwTplqpdpptKlBHFtaIh/hpRcfTXNbU6ieOZFXiFDhQVKls0B3l9xEq8wzV1zoy1ba017anAXomNOLAutUSbsTJkcUupIzGXuYOSDSkWHTjbRCBiROEDpu2diuDcbRB3W8yUHCdwTeParWM+FZEbxt8u9zDa5SwKxbtq0Gx0grytSqEZ0kIOA6b1J1PhYbXaUs5TqKYINH8QNWn5ocVEcS1rpPA3XZIyPk/jCcy1JTfTWNEKHPSkDRZBoFjbM7M5iYqZ1vjQEBdTbxd0VPQiQH6knqAkQWost3g0nSrQ+D2gxhyXzEGGxD/VqXz1I8xS/62tXQWgyqw4QlqEizYU7SehPCEU5Pwna3lHXBcYgyzGLuciVgVKNDnWDtxBbiw57ykimmEdl0VfXVL/fO3ou1hpg6xTwbqYpxWEY54zRRh3xmPl7nKjaL+FvOA5vBzrGTmlQLVnzvtzVa3bLJoXfm7g/YdSCUfeO6lS4zGA9n94cdg0nZI90r3MDfsIL0SSGTi9O7Ug7avMWWUhbo/j+3KYYrv9qUm19vqxMd/n6Gq1cv5gF1vgqi1lovFJaJ4RUJJssVGj1CQuW0GjHZ32i8Ronr3jTqJ6Ia6JI+k65hafVtSQVQuGoXoEduFTRSCxUXbdzxyQEIRYmCjEyIoL26CX3LtalDbS+RSralolLb0zrKvou6D/h+jBcXy596D1/tOCcBdhwB3Yte1VXpCMdP/0lS3JjH06MNzvauEpGakXfHemzqkeM4m26NVpUDdTzMhKiCHc4XIK7su4j9FFFCgIMg/VkU966o2clfpnH7ZO5thrc1hnc2f//qsV70S0YPmmEH0lkdJ8s7FMu0AYOe0j6TvVzITZ0D/nXFx5rc+/j8SamlTcAlc3xcz/EqXnobu1oVq5yRv/NXOqyTNrp/YfcxsAVIpzZVxDHGZMfmideepliP3y2HfDwtBbti6zIq9DEsH4OR6TN6db4mC1XJVT/TmUvsty44c0LCUHNJZ27WcpLg1/Fx8EmjbzPzWuUPbxpTr+Ziq4Up2jH7Cqu4aVy8ZkpUuYfP4VHB06HOPgaoXh3q++cghAYTftYAonJ962nxYIXoANpHLy+wPPdvd19306RroShqWXTvZNIp1kQwCAwc1oxLDrxbCFEOq4C1K2hcL4bCiE2QR43vuTkJYr03rCkWUq2YoI0f1CVHu1nXRkq5OXXvlsHGbQpB2M0yeEZnEZlVFpZgFsNKCq4ZzWo05bF1dSlpUpsuSH+ymfkivnfObxKt90YALiAedeeZP5We7UWS52ld4Bw3MJBL2BpQS9QqGmcgTlLiADPlYmiLx3nAmbtBm7pBXyB3ZqV5BDUAYrUp+4d8r6LBqbYf7fUwYygzeF2Pk6gwHC+lvoe4S/Wn1Gp4WMrLdNo8wKiQUC6CJHh/lEqtju3XeYaxTALF3IacQ1aj/T1i5dfx+sXfJ7rLW9LIcJ9m1BBO2OSRvrV7hTyPi4SAy6odyO1cTlw6n2nN5DrWnbPz3CHWFArpZtLv7vbRYCPoV4H9C6Fy9I2NwOCa4moZgoaJ6Tj2jTYI6GBc4aLb4U3D80HsjsYmXLQ0MZ2DeS2gFJ6Xli8EYpON9peUW++ydL4PxMSUu9je38u5tfcjUAXtCENz1qPoLgB/IzMYb2QVG8viM+fR0BZtjpxWm5RiaD2M7jjsy/1ej2t2egEoEQfRzjUchUCJGkTxtjGKPnLts3qeHtBQTSyQbqBHRpFoMFi5jEbydDaFkQ0hHHsMBZ5u0aVIwZA8CDqcf3wvilEzd9lmjQNT1tBmvFFN9pYdeQHMiNM67El0QYtTjFrwFtkZnEZesjl6ksMTTzFynXfkt4pSUTKlPBobZWI4Sk9KcTyZphmsg4q47+jFJuRPkTkRHp2IcgzoADiFxQUJ0tgznlqQ/KMMyCmwk/XEU0O7JuVOfrLMWfJVHtSa2kGFrowD8nTe5PKiO1bFgz9wTUkQJByeg67SrOUY6ljYmG7sV/z958k5scJUuII3Zl52L25fbyk2q+QMQwehKF0KAOIP8ogNEr2LW93nrDjZ8153EQTmLf64rWSknweoqTxspwNCzbiURoPZ6mFpJy4TRXqjUyX2RqTWwfjevLeRJq9+heQWSh3/jGU3fU1wIo599QyqZVJsKquPdqcipCcnvXeXprBe00aQy5sjWZoAdpYCuf3gej0s1o7JIS/itN3/kf+jdrf5W3VEpLocnWf4sUaaxzglo/nJ2lPtNJOuJDpctuc8+Y9mh+9/lgINMpm40kELMPQiHnvkrFDT4dtEp1KduyycMTzo8d30UuycFKOklCp3+CHYuzReM7AfuV/ntrrmTXOdAgMIjk8EzbXQg6/hfBJXDpbP9vuxykGuDiKjq5Q/jPdNLXD0+vmZ38skNYxKCBj1Yq6qYh3HZjihEIm4s0GM5ZacT/0cBansu7mXJOkW8qGtff5DPoBmq/QB3osPkcqcShxO4jz11I+p8YcOPE0FI/84U9CCfKHaHXFDnzUrso3UJR45zf0gkE8wuVzUt6jRrnzynbdlXIqwKK368VnYjjzvbME4eFTBujMmGyI8jZutYnGysQ8IwjDW2Nf4UI/n8BXJhpPcLG5Xkquui2660xCpLgi5/+4WsmANp8BVP3iQgj/ijndorZ6EhZqxHqxWHVN2TSDr78YjGsMCPUidlsZxb6LpDVQ/JNUeIwjmh0oXNH5OlvvwKzRBRwEjFC0GR/SartqQM9iIDIT7kL9EakwEk2cLfSFQbltVn52JPFcexl9EJLp1hyH2GROXnUgLBp+eI/1syMT3+A89MaAxWEfIP35i4Nue4HDxnB6Pu0y3YYq207xksz5uPZFzsn0NchAv7EZS+S4J9eVAwX6TJwa5TofN3Lqg91p0wPcDJjdnb2R9miz9viieqQSCT4jepX51B6KMwGZLCRKZ+2RzZ+ggoGemz81MsU9IxpCD7c3cx/nPwbLJed3yimUfp8+QMdsW9MNdsojh09GYP10XjAov6i8qvRjkHshfW7t20sZD5FPtp78zsziq68TDgSXZLxvbgFZmVuI0/FEXqwXgi6ajPQTzVUDl9IM6yaeWWYew+nnZ6ayIE/usMQblpS8wiM9YiKe5MwSBuhj/lwtUwbdUPLmLR2FfXry2ElurWbNRaTeSN/ED+gAAAA==" alt="Хотанский нефритовый слон — резьба по светлому нефриту" width="880" height="741" loading="lazy" decoding="async">
+          <figcaption>
+            <b>Хотанский слон</b>
+            <span>чистейший белый нефрит — почти легендарное «баранье сало». Привезён нами на заказ для частного коллекционера</span>
+          </figcaption>
+        </figure>
+
+        <figure class="jade-photo rv in">
+          <div class="tag">玉</div>
+          <img src="data:image/webp;base64,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" alt="Чётки из чистейшего хотанского нефрита ручной работы" width="700" height="1237" loading="lazy" decoding="async">
+          <figcaption>
+            <b>Хотанские чётки</b>
+            <span>чистейший хотанский нефрит. Сделаны нами на заказ для чайного коллекционера</span>
+          </figcaption>
+        </figure>
+        </div>
+
+        <div class="jade-txt rv in">
+          <p class="jade-lead">В Китае говорят: <strong>«Золото имеет цену, нефрит — бесценен»</strong>. Тысячелетиями этот камень был привилегией знати: из него вырезали императорские печати, его дарили на рождение, свадьбу и открытие дела. Нефритовый браслет и сегодня — знак статуса и делового благополучия. Считается, что камень оберегает владельца и приносит достаток — недаром его носят самые успешные люди Поднебесной и мира.</p>
+
+          <h3 class="jade-h">Дороже золота — и дорожает каждый год</h3>
+          <p>Качественный нефрит — исчерпаемый ресурс: лучшие месторождения Хотана почти выработаны. В Китае отборный нефрит ценится <strong>дороже золота</strong>, а цены на него растут год от года. Это не просто украшение — это актив, который передают по наследству.</p>
+
+          <h3 class="jade-h">Почему мы</h3>
+          <p>До 90% «нефрита» за пределами Китая — крашеный кварцит, стекло или прессованная крошка. Мы работаем напрямую с Китаем, без посредников:</p>
+          <ul class="jade-list">
+            <li><strong>Только чистый природный нефрит</strong> — никаких подделок и «облагороженных» камней: каждый предмет проходит личную экспертизу собственников чайного клуба</li>
+            <li><strong>От известных мастеров</strong> — изделия с именем и школой, а не штамповка</li>
+            <li><strong>Из любых локаций</strong> — Хотан, Хэ Мо, Куньлунь; белый «бараний жир», зелёный, редкий чёрный, сахарный. Всё, что заслуживает внимания, — в нашем поле зрения</li>
+            <li><strong>Браслеты и изделия на заказ</strong> — под ваш размер, символ и бюджет</li>
+          </ul>
+          <p>Годы работы с элитным китайским чаем дали нам главное — проверенных партнёров и репутацию. Нефрит мы отбираем так же строго, как чай. Без компромиссов.</p>
+          <p>Подбираем так, как сами любим: у каждого предмета — своя собственная история и сила, которую можно понять, только столкнувшись с настоящим нефритом.</p>
+          <p class="script" style="margin-top:6px">напишите нам — подберём и привезём лучший нефрит под ваш бюджет.</p>
+          <a class="btn solid add" href="#order" data-name="Нефрит" style="margin-top:24px">Сделать заказ</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PATH -->
+<section id="path">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow">Путь чая</div>
+      <h2>От дерева до твоей чашки — 3 шага</h2>
+      <p>Никаких оптовых баз и «купажей из остатков». Мы контролируем каждый этап лично.</p>
+    </div>
+    <div class="path rv">
+      <div class="step">
+        <em>Шаг 01</em>
+        <h3>Отбираем партию</h3>
+        <p>Берём только то, что пьём сами. Каждая партия получает номер и описание фермы происхождения.</p>
+      </div>
+      <div class="step">
+        <em>Шаг 02</em>
+        <h3>Везём напрямую</h3>
+        <p>Герметичная упаковка сразу после сбора и прямая доставка — без месяцев на складах перекупщиков.</p>
+      </div>
+      <div class="step">
+        <em>Шаг 03</em>
+        <h3>Ты завариваешь</h3>
+        <p>К каждому заказу — гид по завариванию от клуба: температура, время, посуда. Всё, чтобы раскрыть вкус.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLUB -->
+<section id="club">
+  <div class="wrap">
+    <div class="club">
+      <div class="rv">
+        <div class="welcome-card">
+          <div class="smile">:)</div>
+          <h3>Добро пожаловать в клуб</h3>
+          <div class="wc-brand">
+            <svg viewBox="0 0 100 100" fill="none"><path d="M50 8 a42 42 0 1 0 29.7 12.3" stroke="#0B0B09" stroke-width="7" stroke-linecap="round"/><circle cx="66" cy="26" r="7" fill="#0B0B09"/><path d="M22 72 L46 44 L58 58 L66 50 L80 66" stroke="#0B0B09" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            БИНДАО
+          </div>
+        </div>
+      </div>
+      <div class="rv">
+        <div class="eyebrow">Клуб</div>
+        <h2 style="font-size:clamp(1.6rem,3.8vw,2.6rem);margin:22px 0 14px">Мы не классический магазин.<br>Мы — клуб чайных авантюристов.</h2>
+        <p style="color:var(--mut);margin-bottom:30px">Первый заказ автоматически даёт тебе возможность стать членом чайного клуба. Дальше — онлайн-интервью с собственниками клуба.</p>
+        <div class="perks">
+          <div class="perk"><b>Доступ</b><div><h3>Лимитированные партии</h3><p>Редкие сборы сначала предлагаются членам клуба — и только потом попадают в открытый каталог.</p></div></div>
+          <div class="perk"><b>Знания</b><div><h3>Гиды и дегустации</h3><p>Разборы сортов, техники заваривания и онлайн-дегустации вместе с нами и фермерами.</p></div></div>
+          <div class="perk"><b>Выгода</b><div><h3>Клубная цена</h3><p>Постоянная скидка на все партии и ранний доступ к сетам и нефриту лимитированных серий.</p></div></div>
+          <div class="perk"><b>Люди</b><div><h3>Сообщество единомышленников</h3><p>Доступ к закрытым встречам членов клуба.</p></div></div>
+        </div>
+        <a class="btn solid" style="margin-top:34px" href="#order">Сделать первый заказ</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CORPORATE -->
+<section id="corp">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow">Бизнесу · B2B</div>
+      <h2>Корпоративные подарки,<br>которые не пылятся на полке</h2>
+      <p>Ежедневники, powerbank'и и конфеты с логотипом забываются на следующий день. Чайная культура — остаётся. Подарите сотрудникам и партнёрам не сувенир, а впечатление: коллаборацию вашего бренда с лучшим китайским чаем.</p>
+    </div>
+
+    <div class="corp-grid rv">
+      <div class="corp-box">
+        <div class="corp-box-title">Что входит в набор</div>
+        <p class="corp-sub">Ровно всё, что нужно для погружения в чайную культуру — ничего лишнего:</p>
+        <ul class="jade-list">
+          <li><strong>4 баночки отборного китайского чая</strong> — отбираем напрямую в Китае, без посредников</li>
+          <li><strong>Чайник из обожжённого стекла</strong> — выдерживает кипяток, раскрывает цвет настоя</li>
+          <li><strong>Стеклянная пиала</strong> — эстетика церемонии в каждом глотке</li>
+          <li><strong>Фирменная атрибутика</strong> — детали, которые превращают набор в цельный продукт</li>
+        </ul>
+        <p class="corp-note"><strong>И главное — ваш логотип на нашем мерче.</strong> Это не «подарок от подрядчика», а коллаборация вашего предприятия с брендом элитного чая. Современный дизайн, продуманная упаковка — набор, который приятно и дарить, и получать.</p>
+      </div>
+
+      <div class="corp-box corp-bonus">
+        <div class="corp-box-title">Бонус, которого нет ни у кого</div>
+        <h3 class="jade-h" style="margin-top:6px">Чайная церемония у вас в офисе</h3>
+        <p class="corp-sub">В стоимость входит <strong>выездная чайная церемония</strong> для вашей команды. Наш мастер проведёт дегустацию и небольшую лекцию:</p>
+        <ul class="jade-list">
+          <li>про китайский чай — как его выбирают, заваривают и пьют</li>
+          <li>про китайский бизнес-менталитет — гуаньси, долгие отношения, терпение и стратегия — и что из этого стоит позаимствовать вашему бизнесу</li>
+        </ul>
+        <p class="corp-note">Это уже не просто подарок — это корпоративное событие, тимбилдинг и полезный контент в одном флаконе.</p>
+      </div>
+    </div>
+
+    <div class="sec-head rv" style="margin-top:70px;margin-bottom:40px">
+      <h2 style="font-size:clamp(1.3rem,3vw,2rem)">Почему это круто дарить</h2>
+    </div>
+    <div class="path rv corp-why">
+      <div class="step">
+        <em>Сотрудникам</em>
+        <h3>Не «для галочки»</h3>
+        <p>Такой набор говорит: мы ценим вас настолько, что выбрали лучшее.</p>
+      </div>
+      <div class="step">
+        <em>Партнёрам</em>
+        <h3>Статусный жест</h3>
+        <p>В лучших традициях восточного делового этикета: в Китае чай дарят самым уважаемым людям. Ваш партнёр это считает — и запомнит.</p>
+      </div>
+      <div class="step">
+        <em>Вашему бренду</em>
+        <h3>Работает на имидж</h3>
+        <p>Логотип на элитном продукте лучше любой сувенирки. Набором пользуются месяцами, и каждое чаепитие — напоминание о вас.</p>
+      </div>
+    </div>
+
+    <div class="corp-cta rv">
+      <div class="corp-terms">
+        <span><b>от 30</b> наборов — минимальный заказ</span>
+        <span>Отлаженное B2B-взаимодействие: договор, документы, брендирование, логистика и церемония — берём на себя. Вам остаётся только удивлять.</span>
+      </div>
+      <a class="btn solid add" href="#order" data-name="Корпоративные наборы">Заказать корпоративные наборы</a>
+    </div>
+  </div>
+</section>
+
+<!-- ORDER -->
+<section id="order">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow">Заказ</div>
+      <h2>Начни свою экспедицию</h2>
+    </div>
+    <div class="order">
+      <div class="order-info rv">
+        <p>Оставь заявку — мы ответим в течение часа, поможем выбрать чай под твой вкус и оформим доставку. Отправляем по всей России.</p>
+        <p class="script">напиши нам — мы любим поговорить о чае.</p>
+        <div class="contact-line"><b>Телефон</b><span><a href="tel:+79995454088">+7 999 545-40-88</a></span></div>
+        <div class="contact-line"><b>Telegram</b><span>@bindao_club</span></div>
+        <div class="contact-line"><b>Instagram</b><span>@bindao.tea</span></div>
+        <div class="contact-line"><b>Почта</b><span>hello@bindao.tea</span></div>
+        <div class="contact-line"><b>Доставка</b><span>СДЭК, Почта, международная</span></div>
+      </div>
+      <form id="orderForm" class="rv">
+        <div>
+          <label for="fName">Имя</label>
+          <input id="fName" type="text" placeholder="Как к тебе обращаться" required>
+        </div>
+        <div>
+          <label for="fContact">Telegram или телефон</label>
+          <input id="fContact" type="text" placeholder="@username или +7…" required>
+        </div>
+        <div>
+          <label for="fProduct">Что интересует</label>
+          <select id="fProduct">
+            <option>Заказ из корзины — состав в комментарии</option>
+            <option>Шу пуэр Гун Тин «Биндао» — наш флагман</option>
+            <option>Шу пуэр Лао Ча Тоу</option>
+            <option>Шэн пуэр Гу Шу Мушу — целый блин 357 г</option>
+            <option>Шу пуэр «БА» — баночка 120 г</option>
+            <option>Шу пуэр «Соточка» — блинчик 100 г</option>
+            <option>Те Гуань Инь Нун Сян</option>
+            <option>Да Хун Пао</option>
+            <option>У Дун Бай Е Дань Цун</option>
+            <option>Шу пуэр Мэн Хай Лао</option>
+            <option>Ци Лань</option>
+            <option>Нефрит</option>
+            <option>Корпоративные наборы</option>
+            <option>Ещё не знаю — посоветуйте</option>
+          </select>
+        </div>
+        <div>
+          <label for="fMsg">Комментарий</label>
+          <textarea id="fMsg" placeholder="Расскажи, какой вкус любишь — подберём партию"></textarea>
+        </div>
+        <label class="consent">
+          <input type="checkbox" id="fConsent" required>
+          <span>Я даю <a href="#" data-doc="soglasie">согласие на обработку персональных данных</a> и принимаю <a href="#" data-doc="privacy">Политику конфиденциальности</a></span>
+        </label>
+        <button class="btn solid" type="submit" style="justify-content:center">Отправить заявку</button>
+        <div class="form-ok" id="formOk">Заявка принята! Ответим в течение часа. Добро пожаловать в клуб :)</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap foot">
+    <a class="brand" href="#top">
+      <svg viewBox="0 0 100 100" fill="none" style="width:32px;height:32px"><path d="M50 8 a42 42 0 1 0 29.7 12.3" stroke="#C9F229" stroke-width="7" stroke-linecap="round"/><circle cx="66" cy="26" r="7" fill="#C9F229"/><path d="M22 72 L46 44 L58 58 L66 50 L80 66" stroke="#C9F229" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <b>БИНДАО</b>
+    </a>
+    <small>Клуб чайных авантюристов · Yunnan — China<br>Организация: ИП Саунин Илья Александрович</small>
+    <span class="hz-mini">冰岛</span>
+  </div>
+  <div class="foot-legal">
+    <div class="foot-docs">
+      <a href="#" data-doc="privacy">Политика конфиденциальности</a>
+      <a href="#" data-doc="soglasie">Согласие на обработку данных</a>
+      <a href="#" data-doc="terms">Пользовательское соглашение</a>
+    </div>
+    <div class="foot-req">
+      ИП Саунин Илья Александрович<br>
+      ИНН 772837789282 · ОГРНИП 324508100590432
+    </div>
+  </div>
+</footer>
+
+<!-- LEGAL MODALS -->
+<div class="legal-overlay" id="doc-privacy" role="dialog" aria-modal="true" aria-label="Политика конфиденциальности">
+  <div class="legal-modal">
+    <button class="legal-close" type="button" aria-label="Закрыть">✕</button>
+    <div class="eyebrow">Документы</div>
+    <h2>Политика в отношении обработки персональных данных</h2>
+    <div class="lm-meta">Оператор: ИП Саунин Илья Александрович · Редакция от 20 июля 2026 г.</div>
+
+    <h3>1. Общие положения</h3>
+    <p>1.1. Настоящая политика обработки персональных данных (далее — Политика) составлена в соответствии с требованиями Федерального закона от 27.07.2006 № 152-ФЗ «О персональных данных» и определяет порядок обработки персональных данных и меры по обеспечению их безопасности, предпринимаемые Индивидуальным предпринимателем Сауниным Ильёй Александровичем (далее — Оператор).</p>
+    <p>1.2. Оператор ставит своей важнейшей целью соблюдение прав и свобод человека и гражданина при обработке его персональных данных, в том числе защиты прав на неприкосновенность частной жизни, личную и семейную тайну.</p>
+    <p>1.3. Политика применяется ко всей информации, которую Оператор может получить о посетителях сайта чайного клуба «БИНДАО» (далее — Сайт).</p>
+    <div class="lm-req"><b>Реквизиты оператора</b>Индивидуальный предприниматель Саунин Илья Александрович<br>ИНН: 772837789282<br>ОГРНИП: 324508100590432<br>E-mail по вопросам персональных данных: <a href="mailto:hello@bindao.tea">hello@bindao.tea</a></div>
+
+    <h3>2. Основные понятия</h3>
+    <p>2.1. Автоматизированная обработка персональных данных — обработка персональных данных с помощью средств вычислительной техники.</p>
+    <p>2.2. Блокирование персональных данных — временное прекращение обработки персональных данных (за исключением случаев, когда обработка необходима для уточнения персональных данных).</p>
+    <p>2.3. Сайт — совокупность графических и информационных материалов, а также программ для ЭВМ и баз данных, обеспечивающих их доступность в сети Интернет.</p>
+    <p>2.4. Персональные данные — любая информация, относящаяся прямо или косвенно к определённому или определяемому физическому лицу (субъекту персональных данных) — пользователю Сайта.</p>
+    <p>2.5. Обработка персональных данных — любое действие (операция) или совокупность действий с персональными данными, совершаемых с использованием средств автоматизации или без них: сбор, запись, систематизация, накопление, хранение, уточнение (обновление, изменение), извлечение, использование, передача (распространение, предоставление, доступ), обезличивание, блокирование, удаление, уничтожение.</p>
+    <p>2.6. Оператор — лицо, самостоятельно или совместно с другими лицами организующее и (или) осуществляющее обработку персональных данных, а также определяющее цели обработки, состав персональных данных и действия (операции) с ними.</p>
+    <p>2.7. Пользователь — любой посетитель Сайта.</p>
+
+    <h3>3. Персональные данные, которые обрабатывает Оператор</h3>
+    <ul>
+      <li>имя;</li>
+      <li>номер телефона;</li>
+      <li>имя пользователя в мессенджерах (Telegram и др.);</li>
+      <li>адрес электронной почты;</li>
+      <li>адрес доставки (при оформлении заказа);</li>
+      <li>иные данные, которые Пользователь добровольно указывает в формах на Сайте (в том числе в поле «Комментарий»).</li>
+    </ul>
+    <p>Также на Сайте происходит сбор и обработка обезличенных данных о посетителях (в том числе файлов cookie) с помощью сервисов интернет-статистики. Порядок работы с cookie описан в разделе 8 настоящей Политики.</p>
+
+    <h3>4. Цели обработки персональных данных</h3>
+    <ul>
+      <li>обработка заявок и заказов Пользователя, связь с Пользователем, в том числе направление уведомлений, запросов и информации, касающихся оформления и доставки заказов;</li>
+      <li>заключение и исполнение договоров купли-продажи товаров, представленных на Сайте;</li>
+      <li>информирование Пользователя о новинках, акциях и предложениях — только при наличии отдельного согласия Пользователя; согласие может быть отозвано в любой момент направлением письма на e-mail Оператора с пометкой «Отказ от рассылки»;</li>
+      <li>улучшение работы Сайта и качества обслуживания на основе обезличенных статистических данных.</li>
+    </ul>
+
+    <h3>5. Правовые основания обработки</h3>
+    <p>5.1. Оператор обрабатывает персональные данные Пользователя только в случае их заполнения и/или отправки Пользователем самостоятельно через формы, расположенные на Сайте. Заполняя соответствующие формы и/или отправляя свои персональные данные Оператору, Пользователь выражает согласие с настоящей Политикой.</p>
+    <p>5.2. Правовыми основаниями обработки являются: ст. 24 Конституции РФ; Федеральный закон № 152-ФЗ «О персональных данных»; договоры, заключаемые между Оператором и Пользователем; согласие Пользователя на обработку персональных данных.</p>
+    <p>5.3. Оператор обрабатывает обезличенные данные о Пользователе, если это разрешено в настройках браузера Пользователя (включено сохранение файлов cookie и использование технологии JavaScript).</p>
+
+    <h3>6. Порядок сбора, хранения, передачи и других видов обработки</h3>
+    <p>6.1. Безопасность персональных данных обеспечивается путём реализации правовых, организационных и технических мер, необходимых для выполнения в полном объёме требований действующего законодательства в области защиты персональных данных.</p>
+    <p>6.2. Оператор обеспечивает сохранность персональных данных и принимает все возможные меры, исключающие доступ к ним неуполномоченных лиц.</p>
+    <p>6.3. Персональные данные Пользователя никогда, ни при каких условиях не будут переданы третьим лицам, за исключением случаев, связанных с исполнением действующего законодательства, а также случаев, необходимых для исполнения договора с Пользователем (например, передача данных, необходимых для доставки заказа, службам доставки — СДЭК, АО «Почта России» и др.).</p>
+    <p>6.4. В случае выявления неточностей в персональных данных Пользователь может актуализировать их, направив Оператору уведомление на e-mail <a href="mailto:hello@bindao.tea">hello@bindao.tea</a> с пометкой «Актуализация персональных данных».</p>
+    <p>6.5. Срок обработки персональных данных определяется достижением целей, для которых они были собраны, если иной срок не предусмотрен договором или действующим законодательством. Пользователь может в любой момент отозвать своё согласие, направив Оператору уведомление на e-mail <a href="mailto:hello@bindao.tea">hello@bindao.tea</a> с пометкой «Отзыв согласия на обработку персональных данных».</p>
+    <p>6.6. Хранение персональных данных граждан РФ осуществляется с использованием баз данных, находящихся на территории Российской Федерации.</p>
+
+    <h3>7. Права субъекта персональных данных</h3>
+    <p>Пользователь вправе:</p>
+    <ul>
+      <li>получать информацию, касающуюся обработки его персональных данных;</li>
+      <li>требовать уточнения, блокирования или уничтожения своих персональных данных, если они являются неполными, устаревшими, неточными, незаконно полученными или не являются необходимыми для заявленной цели обработки;</li>
+      <li>отозвать согласие на обработку персональных данных;</li>
+      <li>обжаловать действия или бездействие Оператора в уполномоченный орган по защите прав субъектов персональных данных (Роскомнадзор) или в судебном порядке.</li>
+    </ul>
+
+    <h3>8. Файлы cookie</h3>
+    <p>8.1. Cookie — небольшие текстовые файлы, сохраняемые браузером Пользователя. Сайт использует cookie для корректной работы (в том числе для работы корзины), запоминания настроек Пользователя и сбора обезличенной статистики посещаемости.</p>
+    <p>8.2. Продолжая использовать Сайт после ознакомления с уведомлением об использовании cookie, Пользователь соглашается с их применением. Пользователь может отключить cookie в настройках своего браузера, однако это может повлиять на работу отдельных функций Сайта (например, корзины).</p>
+
+    <h3>9. Трансграничная передача данных</h3>
+    <p>9.1. Оператор не осуществляет трансграничную передачу персональных данных.</p>
+
+    <h3>10. Заключительные положения</h3>
+    <p>10.1. Пользователь может получить любые разъяснения по интересующим вопросам, касающимся обработки его персональных данных, обратившись к Оператору по адресу <a href="mailto:hello@bindao.tea">hello@bindao.tea</a>.</p>
+    <p>10.2. В настоящем документе будут отражены любые изменения политики обработки персональных данных Оператором. Политика действует бессрочно до замены её новой версией.</p>
+    <p>10.3. Актуальная версия Политики в свободном доступе расположена на Сайте.</p>
+  </div>
+</div>
+
+<div class="legal-overlay" id="doc-soglasie" role="dialog" aria-modal="true" aria-label="Согласие на обработку персональных данных">
+  <div class="legal-modal">
+    <button class="legal-close" type="button" aria-label="Закрыть">✕</button>
+    <div class="eyebrow">Документы</div>
+    <h2>Согласие на обработку персональных данных</h2>
+    <div class="lm-meta">Оператор: ИП Саунин Илья Александрович · Редакция от 20 июля 2026 г.</div>
+
+    <p>Пользователь, отправляя свои данные через формы на сайте чайного клуба «БИНДАО» (далее — Сайт), действуя свободно, своей волей и в своём интересе, подтверждает своё согласие на обработку персональных данных Индивидуальным предпринимателем Сауниным Ильёй Александровичем (далее — Оператор) на условиях, изложенных ниже, в соответствии со ст. 9 Федерального закона от 27.07.2006 № 152-ФЗ «О персональных данных».</p>
+    <div class="lm-req"><b>Оператор персональных данных</b>Индивидуальный предприниматель Саунин Илья Александрович<br>ИНН: 772837789282<br>ОГРНИП: 324508100590432<br>E-mail: <a href="mailto:hello@bindao.tea">hello@bindao.tea</a></div>
+
+    <h3>1. Согласие даётся на обработку следующих данных</h3>
+    <ul>
+      <li>имя;</li>
+      <li>номер телефона;</li>
+      <li>имя пользователя в мессенджерах (Telegram и др.);</li>
+      <li>адрес электронной почты;</li>
+      <li>адрес доставки (при оформлении заказа);</li>
+      <li>иные данные, добровольно указанные Пользователем в формах на Сайте.</li>
+    </ul>
+
+    <h3>2. Цели обработки</h3>
+    <ul>
+      <li>обработка и исполнение заявок и заказов Пользователя;</li>
+      <li>связь с Пользователем: направление уведомлений, запросов и информации, касающихся оформления и доставки заказов;</li>
+      <li>заключение и исполнение договоров купли-продажи;</li>
+      <li>информирование о новинках и предложениях (при наличии отдельно выраженного согласия).</li>
+    </ul>
+
+    <h3>3. Перечень действий с данными</h3>
+    <p>Сбор, запись, систематизация, накопление, хранение, уточнение (обновление, изменение), извлечение, использование, передача (предоставление, доступ) в объёме, необходимом для исполнения договора (например, службам доставки), обезличивание, блокирование, удаление, уничтожение — с использованием средств автоматизации и без них.</p>
+
+    <h3>4. Срок действия согласия</h3>
+    <p>Согласие действует до достижения целей обработки либо до его отзыва Пользователем. Согласие может быть отозвано в любой момент путём направления Оператору уведомления на e-mail <a href="mailto:hello@bindao.tea">hello@bindao.tea</a> с пометкой «Отзыв согласия на обработку персональных данных».</p>
+
+    <h3>5. Ознакомление с политикой</h3>
+    <p>Пользователь подтверждает, что ознакомлен с <a href="#" data-doc="privacy">Политикой в отношении обработки персональных данных</a> Оператора и с правами субъекта персональных данных, предусмотренными Федеральным законом № 152-ФЗ.</p>
+  </div>
+</div>
+
+<div class="legal-overlay" id="doc-terms" role="dialog" aria-modal="true" aria-label="Пользовательское соглашение">
+  <div class="legal-modal">
+    <button class="legal-close" type="button" aria-label="Закрыть">✕</button>
+    <div class="eyebrow">Документы</div>
+    <h2>Пользовательское соглашение</h2>
+    <div class="lm-meta">Администрация сайта: ИП Саунин Илья Александрович · Редакция от 20 июля 2026 г.</div>
+
+    <h3>1. Общие положения</h3>
+    <p>1.1. Настоящее Пользовательское соглашение (далее — Соглашение) регулирует отношения между Индивидуальным предпринимателем Сауниным Ильёй Александровичем (далее — Администрация) и любым лицом, использующим сайт чайного клуба «БИНДАО» (далее — Пользователь, Сайт).</p>
+    <p>1.2. Используя Сайт, Пользователь подтверждает, что ознакомился с условиями настоящего Соглашения и принимает их в полном объёме. В случае несогласия с условиями Пользователь должен прекратить использование Сайта.</p>
+    <p>1.3. Администрация вправе в любое время изменять условия Соглашения. Изменения вступают в силу с момента публикации новой редакции на Сайте.</p>
+    <div class="lm-req"><b>Администрация сайта</b>Индивидуальный предприниматель Саунин Илья Александрович<br>ИНН: 772837789282 · ОГРНИП: 324508100590432<br>Телефон: <a href="tel:+79995454088">+7 999 545-40-88</a> · E-mail: <a href="mailto:hello@bindao.tea">hello@bindao.tea</a></div>
+
+    <h3>2. Предмет соглашения</h3>
+    <p>2.1. Администрация предоставляет Пользователю доступ к материалам и сервисам Сайта: просмотру информации о чае, посуде и изделиях из нефрита, формированию корзины, отправке заявок и заказов через формы обратной связи.</p>
+    <p>2.2. Цены и описания товаров, размещённые на Сайте, носят информационный характер. Итоговая стоимость заказа (включая доставку) подтверждается Администрацией при обработке заявки Пользователя. Договор купли-продажи считается заключённым с момента согласования сторонами существенных условий заказа.</p>
+
+    <h3>3. Оформление заказа и доставка</h3>
+    <p>3.1. Заказ оформляется через форму на Сайте либо по указанным на Сайте контактам (телефон, Telegram, e-mail).</p>
+    <p>3.2. Доставка осуществляется службами доставки (СДЭК, Почта России и др.) по согласованию с Пользователем. Сроки и стоимость доставки сообщаются при подтверждении заказа.</p>
+    <p>3.3. Возврат и обмен товаров осуществляются в соответствии с Законом РФ от 07.02.1992 № 2300-1 «О защите прав потребителей» и Правилами продажи товаров дистанционным способом. Обращаем внимание: продовольственные товары надлежащего качества (чай) обмену и возврату не подлежат в соответствии с законодательством РФ.</p>
+
+    <h3>4. Права и обязанности сторон</h3>
+    <p>4.1. Пользователь обязуется:</p>
+    <ul>
+      <li>использовать Сайт только в законных целях;</li>
+      <li>указывать достоверные данные при заполнении форм;</li>
+      <li>не предпринимать действий, нарушающих работу Сайта, и не пытаться получить несанкционированный доступ к его функциям;</li>
+      <li>не копировать и не распространять материалы Сайта без согласия Администрации, за исключением случаев, разрешённых законом.</li>
+    </ul>
+    <p>4.2. Администрация вправе:</p>
+    <ul>
+      <li>изменять содержание Сайта, ассортимент, описания и цены товаров без предварительного уведомления;</li>
+      <li>ограничивать доступ к Сайту при нарушении Пользователем условий Соглашения;</li>
+      <li>проводить профилактические работы, во время которых доступ к Сайту может быть ограничен.</li>
+    </ul>
+
+    <h3>5. Интеллектуальная собственность</h3>
+    <p>5.1. Все материалы Сайта (тексты, фотографии, элементы дизайна, логотип «БИНДАО»), если не указано иное, принадлежат Администрации или используются ею на законных основаниях и охраняются в соответствии с частью четвёртой Гражданского кодекса РФ.</p>
+
+    <h3>6. Персональные данные</h3>
+    <p>6.1. Обработка персональных данных Пользователя осуществляется в соответствии с <a href="#" data-doc="privacy">Политикой в отношении обработки персональных данных</a> и Федеральным законом от 27.07.2006 № 152-ФЗ «О персональных данных». Отправляя данные через формы Сайта, Пользователь даёт <a href="#" data-doc="soglasie">согласие на обработку персональных данных</a>.</p>
+
+    <h3>7. Ответственность</h3>
+    <p>7.1. Администрация прилагает разумные усилия для обеспечения корректной работы Сайта, однако не гарантирует его бесперебойную работу и не несёт ответственности за временную недоступность Сайта по независящим от неё причинам.</p>
+    <p>7.2. Администрация не несёт ответственности за содержание внешних сайтов и сервисов, ссылки на которые могут быть размещены на Сайте.</p>
+    <p>7.3. Стороны освобождаются от ответственности за неисполнение обязательств вследствие обстоятельств непреодолимой силы.</p>
+
+    <h3>8. Разрешение споров</h3>
+    <p>8.1. Все споры разрешаются путём переговоров. Претензионный порядок обязателен: срок ответа на претензию — 30 календарных дней с момента её получения. При недостижении согласия спор передаётся на рассмотрение суда в соответствии с законодательством Российской Федерации.</p>
+    <p>8.2. К настоящему Соглашению и отношениям сторон применяется право Российской Федерации.</p>
+
+    <h3>9. Заключительные положения</h3>
+    <p>9.1. Настоящее Соглашение действует бессрочно до замены его новой редакцией.</p>
+    <p>9.2. По всем вопросам, связанным с работой Сайта, Пользователь может обратиться к Администрации по адресу <a href="mailto:hello@bindao.tea">hello@bindao.tea</a>.</p>
+  </div>
+</div>
+
+<script>
+(function(){
+  try{
+    function openDoc(name){
+      var el=document.getElementById('doc-'+name);
+      if(!el) return;
+      document.querySelectorAll('.legal-overlay.open').forEach(function(o){o.classList.remove('open');});
+      el.classList.add('open');
+      el.scrollTop=0;
+      document.body.classList.add('modal-open');
+    }
+    function closeAll(){
+      document.querySelectorAll('.legal-overlay.open').forEach(function(o){o.classList.remove('open');});
+      document.body.classList.remove('modal-open');
+    }
+    document.addEventListener('click',function(e){
+      var t=e.target.closest('[data-doc]');
+      if(t){e.preventDefault();openDoc(t.getAttribute('data-doc'));return;}
+      if(e.target.closest('.legal-close')){closeAll();return;}
+      if(e.target.classList&&e.target.classList.contains('legal-overlay')){closeAll();}
+    });
+    document.addEventListener('keydown',function(e){
+      if(e.key==='Escape'){closeAll();}
+    });
+  }catch(e){}
+})();
+</script>
+<div class="cookie-bar" id="cookieBar" role="dialog" aria-label="Уведомление об использовании cookie">
+  Мы используем файлы cookie для работы сайта и корзины. Оставаясь с нами, ты соглашаешься с <a href="#" data-doc="privacy">Политикой конфиденциальности</a>.
+  <button class="btn solid" id="cookieOk" type="button">Хорошо</button>
+</div>
+<script>
+(function(){
+  try{
+    if(document.cookie.indexOf('bindao_cookie_ok=1')===-1){
+      document.getElementById('cookieBar').classList.add('show');
+    }
+    document.getElementById('cookieOk').addEventListener('click',function(){
+      var d=new Date(); d.setFullYear(d.getFullYear()+1);
+      document.cookie='bindao_cookie_ok=1; expires='+d.toUTCString()+'; path=/; SameSite=Lax';
+      document.getElementById('cookieBar').classList.remove('show');
+    });
+  }catch(e){}
+})();
+</script>
+
+<!-- CART -->
+<button class="cart-fab" id="cartFab" hidden aria-label="Открыть корзину">
+  <svg viewBox="0 0 24 24" fill="none" width="20" height="20"><path d="M4 7h16l-1.5 12h-13L4 7Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M8 10V6a4 4 0 0 1 8 0v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+  Корзина <span class="cart-badge" id="cartCount">0</span>
+</button>
+<div class="cart-panel" id="cartPanel" hidden>
+  <div class="cart-head">
+    <div class="cart-title">Ваш заказ <span class="cart-num" id="cartNum"></span></div>
+    <button class="cart-close" id="cartClose" aria-label="Закрыть корзину">✕</button>
+  </div>
+  <div class="cart-items" id="cartItems"></div>
+  <div class="cart-total"><span>Итого</span><b id="cartTotal">0 ₽</b></div>
+  <div class="cart-actions">
+    <button class="btn solid" id="cartPay" style="justify-content:center">Оплатить онлайн 💳</button>
+    <button class="btn" id="cartCheckout" style="justify-content:center">Оформить заявкой</button>
+    <button class="cart-clear" id="cartClear">Очистить корзину</button>
+  </div>
+</div>
+
+<script>
+// показать все блоки (страховка, если что-то пойдёт не так)
+function revealAll(){ document.querySelectorAll('.rv').forEach(function(el){ el.classList.add('in'); }); }
+
+// 1) плавное появление блоков при прокрутке — с запасными вариантами
+try {
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: .12 });
+    document.querySelectorAll('.rv').forEach(function(el){ io.observe(el); });
+    // подстраховка: через 4 секунды показать всё, что могло не сработать
+    setTimeout(function(){
+      document.querySelectorAll('.rv:not(.in)').forEach(function(el){
+        var r = el.getBoundingClientRect();
+        if (r.top < window.innerHeight * 1.5) el.classList.add('in');
+      });
+    }, 4000);
+  } else {
+    revealAll();
+  }
+} catch(e) { revealAll(); }
+
+// 2) мобильное меню: надёжное открытие/закрытие скриптом
+try {
+  var burgerBtn = document.querySelector('.burger');
+  var mMenu = document.getElementById('mobileMenu');
+  burgerBtn.addEventListener('click', function(ev){
+    ev.preventDefault();
+    mMenu.classList.toggle('open');
+  });
+  mMenu.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ mMenu.classList.remove('open'); });
+  });
+} catch(e) {}
+
+// 3) бегущая строка
+try {
+  var mq = document.getElementById('mqTrack');
+  mq.innerHTML += mq.innerHTML;
+} catch(e) {}
+
+// 5) все внутренние ссылки прокручивают страницу напрямую, без смены адреса
+// (это убирает вопрос «Open Link» в просмотрщиках файлов)
+try {
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    if (a.classList.contains('burger')) return;
+    a.addEventListener('click', function(e){
+      if (a.dataset.price) return; // товары обрабатывает корзина
+      var id = a.getAttribute('href').slice(1);
+      var t = id ? document.getElementById(id) : null;
+      if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
+    });
+  });
+} catch(e) {}
+
+// 6) кнопки «Сделать заказ» (нефрит, корпоративные): подставить в форму
+try {
+  document.querySelectorAll('.add:not([data-price])').forEach(function(btn){
+    btn.addEventListener('click', function(ev){
+      if (ev && ev.preventDefault) ev.preventDefault();
+      var sel = document.getElementById('fProduct');
+      var name = btn.dataset.name;
+      Array.prototype.forEach.call(sel.options, function(o){ if (o.text.indexOf(name) !== -1) sel.value = o.text; });
+      document.getElementById('order').scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+} catch(e) {}
+
+// 7) КОРЗИНА
+try {
+  var CART_KEY = 'bindao_cart_v1';
+  var cart = { items: {}, num: null };
+  try { var saved = localStorage.getItem(CART_KEY); if (saved) cart = JSON.parse(saved); } catch(e) {}
+  if (!cart || typeof cart !== 'object' || !cart.items) cart = { items: {}, num: null };
+
+  var fab = document.getElementById('cartFab');
+  var panel = document.getElementById('cartPanel');
+  var itemsBox = document.getElementById('cartItems');
+  var countEl = document.getElementById('cartCount');
+  var totalEl = document.getElementById('cartTotal');
+  var numEl = document.getElementById('cartNum');
+
+  function cartSave(){ try { localStorage.setItem(CART_KEY, JSON.stringify(cart)); } catch(e) {} }
+  function fmtRub(n){ return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, '\u00A0') + ' ₽'; }
+  function ensureNum(){ if (!cart.num) { cart.num = 'BD-' + Math.floor(100000 + Math.random() * 900000); } }
+  function cartCount(){ var c = 0; for (var k in cart.items) c += cart.items[k].qty; return c; }
+  function cartTotal(){ var s = 0; for (var k in cart.items) s += cart.items[k].qty * cart.items[k].price; return s; }
+
+  function render(){
+    var c = cartCount();
+    countEl.textContent = c;
+    fab.hidden = (c === 0 && panel.hidden);
+    numEl.textContent = cart.num ? ('№ ' + cart.num) : '';
+    totalEl.textContent = fmtRub(cartTotal());
+    var htmlRows = '';
+    for (var k in cart.items) {
+      var it = cart.items[k];
+      htmlRows += '<div class="ci" data-k="' + k + '">' +
+        '<div class="ci-name">' + k + '<small>' + it.unit + ' · ' + fmtRub(it.price) + ' за шт</small></div>' +
+        '<div class="ci-ctrl">' +
+          '<button data-a="minus" aria-label="Убавить">−</button><b>' + it.qty + '</b><button data-a="plus" aria-label="Добавить">+</button>' +
+          '<button class="ci-x" data-a="del" aria-label="Убрать">✕</button>' +
+        '</div></div>';
+    }
+    itemsBox.innerHTML = htmlRows || '<div class="cart-empty">Корзина пуста. Добавьте чай из каталога :)</div>';
+    cartSave();
+  }
+
+  var toast = document.createElement('div');
+  toast.className = 'cart-toast';
+  document.body.appendChild(toast);
+  var toastTimer = null;
+  function showToast(txt){
+    toast.textContent = txt;
+    toast.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ toast.classList.remove('show'); }, 1600);
+  }
+
+  // добавление товара
+  document.querySelectorAll('.add[data-price]').forEach(function(btn){
+    btn.addEventListener('click', function(ev){
+      ev.preventDefault();
+      var name = btn.dataset.name;
+      ensureNum();
+      if (!cart.items[name]) cart.items[name] = { qty: 0, price: parseInt(btn.dataset.price, 10), unit: btn.dataset.unit || '' };
+      cart.items[name].qty += 1;
+      render();
+      showToast('Добавлено: ' + name + ' ✓');
+    });
+  });
+
+  // плюс/минус/удалить
+  itemsBox.addEventListener('click', function(e){
+    var b = e.target.closest('button'); if (!b) return;
+    var row = e.target.closest('.ci'); if (!row) return;
+    var k = row.getAttribute('data-k');
+    if (!cart.items[k]) return;
+    if (b.dataset.a === 'plus') cart.items[k].qty += 1;
+    if (b.dataset.a === 'minus') { cart.items[k].qty -= 1; if (cart.items[k].qty <= 0) delete cart.items[k]; }
+    if (b.dataset.a === 'del') delete cart.items[k];
+    render();
+  });
+
+  document.getElementById('cartFab').addEventListener('click', function(){ panel.hidden = !panel.hidden; render(); });
+  document.getElementById('cartClose').addEventListener('click', function(){ panel.hidden = true; render(); });
+  document.getElementById('cartClear').addEventListener('click', function(){ cart.items = {}; render(); });
+
+  // оформление: перенести состав заказа в форму
+  document.getElementById('cartCheckout').addEventListener('click', function(){
+    if (cartCount() === 0) { showToast('Корзина пуста'); return; }
+    ensureNum();
+    var sel = document.getElementById('fProduct');
+    Array.prototype.forEach.call(sel.options, function(o){ if (o.text.indexOf('Заказ из корзины') !== -1) sel.value = o.text; });
+    var lines = ['Заказ ' + cart.num + ':'];
+    for (var k in cart.items) {
+      var it = cart.items[k];
+      lines.push('— ' + k + ' (' + it.unit + ') × ' + it.qty + ' = ' + fmtRub(it.qty * it.price));
+    }
+    lines.push('Итого: ' + fmtRub(cartTotal()));
+    document.getElementById('fMsg').value = lines.join('\n');
+    panel.hidden = true;
+    render();
+    document.getElementById('order').scrollIntoView({ behavior: 'smooth' });
+  });
+
+  render();
+
+  // ===================== ОНЛАЙН-ОПЛАТА (CloudPayments) =====================
+  // ШАГ 1: зарегистрируйтесь на cloudpayments.ru, подключите ИП (ИНН/ОГРНИП уже есть в футере).
+  // ШАГ 2: в личном кабинете возьмите Public ID (вида "pk_xxxxxxxxxxxxxxxxxxxxxxxx").
+  // ШАГ 3: вставьте его в строку ниже вместо пустых кавычек — и оплата заработает.
+  var PAY_PUBLIC_ID = ''; // <-- сюда ваш Public ID из CloudPayments
+
+  var payBtn = document.getElementById('cartPay');
+  var cpScriptLoaded = false;
+
+  function loadCpScript(cb){
+    if (cpScriptLoaded && window.cp) { cb(); return; }
+    var s = document.createElement('script');
+    s.src = 'https://widget.cloudpayments.ru/bundles/cloudpayments.js';
+    s.onload = function(){ cpScriptLoaded = true; cb(); };
+    s.onerror = function(){ showToast('Не удалось загрузить платёжный модуль'); };
+    document.head.appendChild(s);
+  }
+
+  payBtn.addEventListener('click', function(){
+    if (cartCount() === 0) { showToast('Корзина пуста'); return; }
+    if (!PAY_PUBLIC_ID) {
+      showToast('Оплата ещё не подключена — оформите заявкой, мы пришлём ссылку на оплату');
+      return;
+    }
+    ensureNum();
+    var itemsList = [];
+    for (var k in cart.items) itemsList.push(k + ' × ' + cart.items[k].qty);
+
+    loadCpScript(function(){
+      var widget = new cp.CloudPayments();
+      widget.pay('charge', {
+        publicId: PAY_PUBLIC_ID,
+        description: 'Заказ ' + cart.num + ' — БИНДАО: ' + itemsList.join(', ').slice(0, 200),
+        amount: cartTotal(),
+        currency: 'RUB',
+        invoiceId: cart.num,
+        skin: 'modern',
+        data: { items: cart.items }
+      }, {
+        onSuccess: function(){
+          showToast('Оплата прошла! Заказ ' + cart.num + ' принят ✓');
+          var ok = document.getElementById('formOk');
+          ok.textContent = 'Оплата получена! Номер вашего заказа: ' + cart.num + '. Мы свяжемся с вами для уточнения доставки.';
+          ok.style.display = 'block';
+          cart = { items: {}, num: null };
+          render();
+          panel.hidden = true;
+          fab.hidden = true;
+          document.getElementById('order').scrollIntoView({ behavior: 'smooth' });
+        },
+        onFail: function(reason){
+          showToast('Оплата не прошла: ' + (reason || 'попробуйте ещё раз'));
+        }
+      });
+    });
+  });
+  // =================== /ОНЛАЙН-ОПЛАТА (CloudPayments) ===================
+
+  // форма: показать номер заказа в подтверждении и начать новый заказ
+  document.getElementById('orderForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    var ok = document.getElementById('formOk');
+    ok.textContent = cart.num
+      ? ('Заявка принята! Номер вашего заказа: ' + cart.num + '. Ответим в течение часа. Добро пожаловать в клуб :)')
+      : 'Заявка принята! Ответим в течение часа. Добро пожаловать в клуб :)';
+    ok.style.display = 'block';
+    e.target.querySelectorAll('input, textarea').forEach(function(f){ if(f.type==='checkbox'){f.checked=false;}else{f.value='';} });
+    cart = { items: {}, num: null };
+    render();
+    fab.hidden = true;
+  });
+} catch(e) {
+  // если корзина не смогла запуститься — форма работает по-старому
+  try {
+    document.getElementById('orderForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      document.getElementById('formOk').style.display = 'block';
+      e.target.querySelectorAll('input, textarea').forEach(function(f){ if(f.type==='checkbox'){f.checked=false;}else{f.value='';} });
+    });
+  } catch(e2) {}
+}
+</script>
+</body>
+</html>
